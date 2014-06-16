@@ -1,4 +1,5 @@
 .idea
 *.iml
 target
+src/main/manifest/manifest.xml
 com.mediaworx.opencms.ideconnector_1.1.zip
