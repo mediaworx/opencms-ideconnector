@@ -29,6 +29,11 @@ import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Helper Class providing methods to generate the module manifest stub or resource infos.
+ *
+ * @author Kai Widman, 2013/2014 mediaworx Berlin AG
+ */
 public class MetaXmlHelper extends CmsExport {
 
 	private static final Log LOG = LogFactory.getLog(MetaXmlHelper.class);
@@ -37,11 +42,132 @@ public class MetaXmlHelper extends CmsExport {
 
 	private CmsObject cmsObject;
 
+	/**
+	 * Creates a new MetaXmlHelper that uses the given CmsObject to read meta information for modules or resources from
+	 * OpenCms.
+	 * @param cmsObject the CmsObject to be used to read meta information from OpenCms
+	 */
 	public MetaXmlHelper(CmsObject cmsObject) {
 		this.cmsObject = cmsObject;
 	}
 
-	public Element getExportInfoElement() {
+	/**
+	 * Creates the module manifest stub XML (OpenCms module manifest with an empty files node) for the given module.
+	 * <br /><br />
+	 * Sample syntax:
+	 * <pre>
+	 * &lt;export&gt;
+	 *     &lt;info&gt;
+	 *         &lt;creator&gt;Admin&lt;/creator&gt;
+	 *         &lt;opencms_version&gt;8.5.1&lt;/opencms_version&gt;
+	 *         &lt;createdate&gt;Fri, 17 Jan 2014 15:35:11 GMT&lt;/createdate&gt;
+	 *         &lt;infoproject&gt;Offline&lt;/infoproject&gt;
+	 *         &lt;export_version&gt;7&lt;/export_version&gt;
+	 *     &lt;/info&gt;
+	 *     &lt;module&gt;
+	 *         &lt;name&gt;com.mycompany.mypackage.mymodule1&lt;/name&gt;
+	 *         &lt;nicename&gt;&lt;![CDATA[My Module 1]]&gt;&lt;/nicename&gt;
+	 *         &lt;class/&gt;
+	 *         &lt;description/&gt;
+	 *         &lt;version&gt;0.4&lt;/version&gt;
+	 *         &lt;authorname&gt;&lt;![CDATA[My Name]]&gt;&lt;/authorname&gt;
+	 *         &lt;authoremail&gt;&lt;![CDATA[my_mail@some-host.org]]&gt;&lt;/authoremail&gt;
+	 *         &lt;datecreated/&gt;
+	 *         &lt;userinstalled/&gt;
+	 *         &lt;dateinstalled/&gt;
+	 *         &lt;dependencies/&gt;
+	 *         &lt;exportpoints&gt;
+	 *             &lt;exportpoint uri="/system/modules/com.mycompany.mypackage.mymodule1/classes/" destination="WEB-INF/classes/"/&gt;
+	 *         &lt;/exportpoints&gt;
+	 *         &lt;resources&gt;
+	 *             &lt;resource uri="/system/modules/com.mycompany.mypackage.mymodule1/"/&gt;
+	 *         &lt;/resources&gt;
+	 *         &lt;parameters/&gt;
+	 *     &lt;/module&gt;
+	 *     &lt;files/&gt;
+	 * &lt;/export&gt;
+	 * </pre>
+	 * @param moduleName    name of the module for which the manifest stub should be returned
+	 *                      (e.g. "com.mycompany.mypackage.mymodule1")
+	 * @return  the manifest stub XML for the given module.
+	 * @throws IllegalArgumentException
+	 */
+	public String getModuleManifestStub(String moduleName) throws IllegalArgumentException {
+		Element exportElement = DocumentHelper.createElement(CmsImportExportManager.N_EXPORT);
+		exportElement.add(getExportInfoElement());
+		exportElement.add(getModuleElement(moduleName));
+		exportElement.addElement(CmsImportVersion7.N_FILES);
+		return getFormattedStringForDocument(DocumentHelper.createDocument(exportElement));
+	}
+
+	/**
+	 * Creates the resource info XML for the VFS file/folder at the given resource path.
+	 * <br /><br />
+	 * Sample xml for VFS folders:
+	 * <pre>
+	 * &lt;file&gt;
+	 *     &lt;destination&gt;testfolder&lt;/destination&gt;
+	 *     &lt;type&gt;folder&lt;/type&gt;
+	 *     &lt;uuidstructure&gt;41a22af8-4b8f-11e3-b543-210cc9a3bba6&lt;/uuidstructure&gt;
+	 *     &lt;datelastmodified&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;/datelastmodified&gt;
+	 *     &lt;userlastmodified&gt;Admin&lt;/userlastmodified&gt;
+	 *     &lt;datecreated&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;/datecreated&gt;
+	 *     &lt;usercreated&gt;Admin&lt;/usercreated&gt;
+	 *     &lt;flags&gt;0&lt;/flags&gt;
+	 *     &lt;properties/&gt;
+	 *     &lt;relations/&gt;
+	 *     &lt;accesscontrol/&gt;
+	 * &lt;/file&gt;
+	 * </pre>
+	 * Sample xml for VFS files:
+	 * <pre>
+	 * &lt;fileinfo&gt;
+	 *     &lt;file&gt;
+	 *         &lt;source&gt;testfolder/testfile.jsp&lt;/source&gt;
+	 *         &lt;destination&gt;testfolder/testfile.jsp&lt;/destination&gt;
+	 *         &lt;type&gt;plain&lt;/type&gt;
+	 *         &lt;uuidstructure&gt;0e436b9f-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidstructure&gt;
+	 *         &lt;uuidresource&gt;0e436ba0-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidresource&gt;
+	 *         &lt;datelastmodified&gt;Thu, 05 Dec 2013 23:31:52 GMT&lt;/datelastmodified&gt;
+	 *         &lt;userlastmodified&gt;Admin&lt;/userlastmodified&gt;
+	 *         &lt;datecreated&gt;Tue, 03 Dec 2013 20:54:09 GMT&lt;/datecreated&gt;
+	 *         &lt;usercreated&gt;Admin&lt;/usercreated&gt;
+	 *         &lt;flags&gt;0&lt;/flags&gt;
+	 *         &lt;properties/&gt;
+	 *         &lt;relations/&gt;
+	 *         &lt;accesscontrol/&gt;
+	 *     &lt;/file&gt;
+	 *     &lt;siblingcount&gt;1&lt;/siblingcount&gt;
+	 * &lt;/fileinfo&gt;
+	 * </pre>
+	 * @param resourcePath  VFS path of the resource for which meta information should be returned.
+	 * @return meta info XML for the resource at the given path.
+	 */
+	public String getResourceInfo(String resourcePath) {
+		try {
+			CmsResource resource = cmsObject.readResource(resourcePath);
+			if (!resource.isFolder()) {
+				Element resourceInfo = DocumentHelper.createElement(NODE_FILE_INFO);
+				resourceInfo.add(getFileElement(resource));
+				Element siblingCount = resourceInfo.addElement(NODE_SIBLING_COUNT);
+				siblingCount.setText(String.valueOf(resource.getSiblingCount()));
+				return getFormattedStringForDocument(DocumentHelper.createDocument(resourceInfo));
+			}
+			else {
+				return getFormattedStringForDocument(DocumentHelper.createDocument(getFileElement(resource)));
+			}
+		}
+		catch (CmsException e) {
+			LOG.error("Resource " + resourcePath + " can't be read", e);
+			return null;
+		}
+	}
+
+	/**
+	 * Internal method to generate the <code>export/info</code> node of the module manifest stub.
+	 * @return  the <code>export/info</code> node.
+	 */
+	private Element getExportInfoElement() {
 		Element info = DocumentHelper.createElement(CmsImportExportManager.N_INFO);
 		info.addElement(CmsImportExportManager.N_CREATOR).addText(OpenCms.getDefaultUsers().getUserAdmin());
 		info.addElement(CmsImportExportManager.N_OC_VERSION).addText(OpenCms.getSystemInfo().getVersionNumber());
@@ -51,7 +177,14 @@ public class MetaXmlHelper extends CmsExport {
 		return info;
 	}
 
-	public Element getModuleElement(String moduleName) throws IllegalArgumentException {
+	/**
+	 * Internal method to generate the <code>export/module</code> node of the module manifest stub.
+	 * Uses the standard OpenCms method <code>CmsModuleXmlHandler.generateXml(module)</code> to generate the XML
+	 * element.
+	 * @param  moduleName name of the module for which the <code>export/module</code> node should be returned
+	 * @return  the <code>export/module</code> node
+	 */
+	private Element getModuleElement(String moduleName) throws IllegalArgumentException {
 		CmsModule module = OpenCms.getModuleManager().getModule(moduleName);
 		if (module == null) {
 			throw new IllegalArgumentException(moduleName + " is not a valid OpenCms module");
@@ -59,15 +192,13 @@ public class MetaXmlHelper extends CmsExport {
 		return CmsModuleXmlHandler.generateXml(module);
 	}
 
-	public String getModuleManifestStub(String moduleName) throws IllegalArgumentException {
-		Element exportElement = DocumentHelper.createElement(CmsImportExportManager.N_EXPORT);
-		exportElement.add(getExportInfoElement());
-		exportElement.add(getModuleElement(moduleName));
-		exportElement.addElement(CmsImportVersion7.N_FILES);
-		return getFormattedStringForDocument(DocumentHelper.createDocument(exportElement));
-	}
-
-	public Element getFileElement(CmsResource resource) {
+	/**
+	 * Internal method used to create the XML file node for the given resource. This is a modified version of the
+	 * standard OpenCms method <code>org.opencms.importexport.CmsExport.appendResourceToManifest</code>.
+	 * @param resource  the resource for which the file node shold be returned.
+	 * @return  the file node for the given resource.
+	 */
+	private Element getFileElement(CmsResource resource) {
 
 		String rootPath = resource.getRootPath();
 
@@ -200,28 +331,12 @@ public class MetaXmlHelper extends CmsExport {
 		}
 	}
 
-
-	public String getResourceInfo(String resourcePath) {
-		try {
-			CmsResource resource = cmsObject.readResource(resourcePath);
-			if (!resource.isFolder()) {
-				Element resourceInfo = DocumentHelper.createElement(NODE_FILE_INFO);
-				resourceInfo.add(getFileElement(resource));
-				Element siblingCount = resourceInfo.addElement(NODE_SIBLING_COUNT);
-				siblingCount.setText(String.valueOf(resource.getSiblingCount()));
-				return getFormattedStringForDocument(DocumentHelper.createDocument(resourceInfo));
-			}
-			else {
-				return getFormattedStringForDocument(DocumentHelper.createDocument(getFileElement(resource)));
-			}
-		}
-		catch (CmsException e) {
-			LOG.error("Resource " + resourcePath + " can't be read", e);
-			return null;
-		}
-	}
-
-	public static String getFormattedStringForDocument(Document document) {
+	/**
+	 * Internal method used to convert an XML document to a formatted String.
+	 * @param document the Document to be converted.
+	 * @return  the formatted String for the given Document.
+	 */
+	private static String getFormattedStringForDocument(Document document) {
 		XMLWriter writer = null;
 		ByteArrayOutputStream outputStream = null;
 		String xmlString = null;

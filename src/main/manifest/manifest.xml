@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<export>
+    <info>
+        <creator>Admin</creator>
+        <opencms_version>8.5.1</opencms_version>
+        <createdate>Mon, 16 Jun 2014 11:01:55 GMT</createdate>
+        <infoproject>Offline</infoproject>
+        <export_version>7</export_version>
+    </info>
+    <module>
+        <name>com.mediaworx.opencms.ideconnector</name>
+        <nicename><![CDATA[Connector for IDEs]]></nicename>
+        <group>com.mediaworx.opencms</group>
+        <class/>
+        <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
+        <version>1.1</version>
+        <authorname><![CDATA[Kai Widmann]]></authorname>
+        <authoremail><![CDATA[widmann@mediaworx.com]]></authoremail>
+        <datecreated/>
+        <userinstalled/>
+        <dateinstalled/>
+        <dependencies/>
+        <exportpoints>
+            <exportpoint destination="WEB-INF/classes/" uri="/system/modules/com.mediaworx.opencms.ideconnector/classes/"/>
+        </exportpoints>
+        <resources>
+            <resource uri="/system/modules/com.mediaworx.opencms.ideconnector/"/>
+        </resources>
+        <parameters/>
+    </module>
+    <files>
+        <file>
+            <destination>system</destination>
+            <type>folder</type>
+            <uuidstructure>7c253fec-8e80-11e2-b5e7-b54eb22890b7</uuidstructure>
+            <datelastmodified>Sat, 16 Mar 2013 21:28:46 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Sat, 16 Mar 2013 21:28:46 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol>
+                <accessentry>
+                    <uuidprincipal>ROLE.WORKPLACE_USER</uuidprincipal>
+                    <flags>514</flags>
+                    <permissionset>
+                        <allowed>1</allowed>
+                        <denied>0</denied>
+                    </permissionset>
+                </accessentry>
+            </accesscontrol>
+        </file>
+        <file>
+            <destination>system/modules</destination>
+            <type>folder</type>
+            <uuidstructure>7d298fc8-8e80-11e2-b5e7-b54eb22890b7</uuidstructure>
+            <datelastmodified>Sat, 16 Mar 2013 21:28:48 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Sat, 16 Mar 2013 21:28:48 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol>
+                <accessentry>
+                    <uuidprincipal>ROLE.WORKPLACE_USER</uuidprincipal>
+                    <flags>514</flags>
+                    <permissionset>
+                        <allowed>5</allowed>
+                        <denied>0</denied>
+                    </permissionset>
+                </accessentry>
+            </accesscontrol>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector</destination>
+            <type>folder</type>
+            <uuidstructure>43070adb-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes</destination>
+            <type>folder</type>
+            <uuidstructure>430b027d-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com</destination>
+            <type>folder</type>
+            <uuidstructure>430cd73f-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx</destination>
+            <type>folder</type>
+            <uuidstructure>430e84f1-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms</destination>
+            <type>folder</type>
+            <uuidstructure>430fe483-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector</destination>
+            <type>folder</type>
+            <uuidstructure>43114415-7f6b-11e3-8e84-210cc9a3bba6</uuidstructure>
+            <datelastmodified>Fri, 17 Jan 2014 11:34:01 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:34:01 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</destination>
+            <type>binary</type>
+            <uuidstructure>ba2180e2-7f6c-11e3-b612-210cc9a3bba6</uuidstructure>
+            <uuidresource>ba2180e3-7f6c-11e3-b612-210cc9a3bba6</uuidresource>
+            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:44:30 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</destination>
+            <type>binary</type>
+            <uuidstructure>64a7fbc4-7f6d-11e3-b612-210cc9a3bba6</uuidstructure>
+            <uuidresource>64a7fbc5-7f6d-11e3-b612-210cc9a3bba6</uuidresource>
+            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:49:16 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</destination>
+            <type>jsp</type>
+            <uuidstructure>64aeb286-7f6d-11e3-b612-210cc9a3bba6</uuidstructure>
+            <uuidresource>64aeb287-7f6d-11e3-b612-210cc9a3bba6</uuidresource>
+            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 17 Jan 2014 11:49:16 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties>
+                <property type="shared">
+                    <name>export</name>
+                    <value>false</value>
+                </property>
+            </properties>
+            <relations/>
+            <accesscontrol/>
+        </file>
+    </files>
+</export>
