@@ -207,6 +207,38 @@ import java.util.Locale;
  * response contains a description of the error that may be shown to the user. The error message may be something like
  * "/testfolder/testfile.jsp could not be read from the VFS" or "Error retrieving CmsPublishList from OpenCms".
  * Messages of multiple errors that occur during one publish request are concatenated.
+ * <br /><br />
+ * <strong>Optional parameter "useMetaVariables"</strong>
+ * <br /><br />
+ * There's an optional parameter <code>useMetaVariables</code> that can be used to replace the meta variables
+ * <code>uuidstructure</code>, <code>uuidresource</code>, <code>datelastmodified</code> and
+ * <code>datecreated</code> with placeholders. If that parameter is set to <code>true</code>, the corresponding xml
+ * nodes will not be filled with real values, but with placeholders. The following example shows a file node with
+ * <code>useMetaVariables</code> set to <code>true</code>:
+ * <pre>
+ * &lt;fileinfo&gt;
+ *     &lt;file&gt;
+ *         &lt;source&gt;testfolder/testfile.jsp&lt;/source&gt;
+ *         &lt;destination&gt;testfolder/testfile.jsp&lt;/destination&gt;
+ *         &lt;type&gt;plain&lt;/type&gt;
+ *         &lt;uuidstructure&gt;${uuidstructure}&lt;/uuidstructure&gt;
+ *         &lt;uuidresource&gt;${uuidresource}&lt;/uuidresource&gt;
+ *         &lt;datelastmodified&gt;${datelastmodified}&lt;/datelastmodified&gt;
+ *         &lt;userlastmodified&gt;Admin&lt;/userlastmodified&gt;
+ *         &lt;datecreated&gt;${datecreated}&lt;/datecreated&gt;
+ *         &lt;usercreated&gt;Admin&lt;/usercreated&gt;
+ *         &lt;flags&gt;0&lt;/flags&gt;
+ *         &lt;properties/&gt;
+ *         &lt;relations/&gt;
+ *         &lt;accesscontrol/&gt;
+ *     &lt;/file&gt;
+ *     &lt;siblingcount&gt;1&lt;/siblingcount&gt;
+ * &lt;/fileinfo&gt;
+ * </pre>
+ * Replacing the UUIDs and dates with placeholders might make sense if multiple developers are working on the same
+ * modules and are using some kind of version control (Git or SVN). If the real IDs and dates are used, there may
+ * be conflicts when trying to commit meta data if the developers create and update the same resources at different
+ * times. If placeholders are used, they have to be replaced by sensible data upon manifest creation.
  *
  * @author Kai Widman, 2013/2014 mediaworx Berlin AG
  */
@@ -248,6 +280,8 @@ public class OpenCmsIDEConnector {
 		CmsFlexController flexController = CmsFlexController.getController(pageContext.getRequest());
 		cmsObject = flexController.getCmsObject();
 		xmlHelper = new MetaXmlHelper(cmsObject);
+		boolean useMetaVariables = "true".equals(request.getParameter("useMetaVariables"));
+		xmlHelper.setUseMetaVariables(useMetaVariables);
 		jsonParser = new JSONParser();
 
 		action = request.getParameter("action");

@@ -41,6 +41,7 @@ public class MetaXmlHelper extends CmsExport {
 	private static final String NODE_SIBLING_COUNT = "siblingcount";
 
 	private CmsObject cmsObject;
+	private boolean useMetaVariablesEnabled = false;
 
 	/**
 	 * Creates a new MetaXmlHelper that uses the given CmsObject to read meta information for modules or resources from
@@ -49,6 +50,17 @@ public class MetaXmlHelper extends CmsExport {
 	 */
 	public MetaXmlHelper(CmsObject cmsObject) {
 		this.cmsObject = cmsObject;
+	}
+
+	/**
+	 * sets the flag useMetaVariablesEnabled. See {@link OpenCmsIDEConnector} for an explanation what
+	 * <code>useMetaVariables</code> does.
+	 * @param useMetaVariables <code>true</code> if meta data (resource UUID, structure UUID, modified date
+	 *                         and created date) should be replaced by placeholders), <code>false</code> otherwise
+	 *
+	 */
+	public void setUseMetaVariables(boolean useMetaVariables) {
+		this.useMetaVariablesEnabled = useMetaVariables;
 	}
 
 	/**
@@ -219,11 +231,12 @@ public class MetaXmlHelper extends CmsExport {
 			}
 			fileElement.addElement(CmsImportVersion7.N_DESTINATION).addText(fileName);
 			fileElement.addElement(CmsImportVersion7.N_TYPE).addText(OpenCms.getResourceManager().getResourceType(resource.getTypeId()).getTypeName());
-			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(resource.getStructureId().toString());
+
+			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(resource.getResourceId().toString());
+				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
 			}
-			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
+			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
 			String userNameLastModified;
 			try {
 				userNameLastModified = cmsObject.readUser(resource.getUserLastModified()).getName();
@@ -232,7 +245,7 @@ public class MetaXmlHelper extends CmsExport {
 				userNameLastModified = OpenCms.getDefaultUsers().getUserAdmin();
 			}
 			fileElement.addElement(CmsImportVersion7.N_USERLASTMODIFIED).addText(userNameLastModified);
-			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(CmsDateUtil.getHeaderDate(resource.getDateCreated()));
+			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
 			String userNameCreated;
 			try {
 				userNameCreated = cmsObject.readUser(resource.getUserCreated()).getName();
