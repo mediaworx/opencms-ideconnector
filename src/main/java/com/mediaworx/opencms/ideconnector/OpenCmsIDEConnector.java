@@ -18,8 +18,8 @@ import org.opencms.publish.CmsPublishManager;
 import org.opencms.report.CmsLogReport;
 import org.opencms.report.I_CmsReport;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletRequest;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -249,9 +249,9 @@ public class OpenCmsIDEConnector {
 	private static final String ACTION_MODULEMANIFESTS = "moduleManifests";
 	private static final String ACTION_RESOURCEINFOS = "resourceInfos";
 	private static final String ACTION_PUBLISH = "publishResources";
-
+	
 	private ServletRequest request;
-	private ServletOutputStream out;
+	private JspWriter out;
 	private CmsObject cmsObject;
 	private MetaXmlHelper xmlHelper;
 
@@ -271,11 +271,10 @@ public class OpenCmsIDEConnector {
 	 * Creates a new IDE connector for the given pageContext, must be executed from a JSP context. Used by
 	 * the JSP found in the VFS under <code>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</code>.
 	 * @param pageContext   the page context of the JSP creation the IDE connector.
-	 * @throws IOException if the response output stream can't be used
 	 */
 	public OpenCmsIDEConnector(PageContext pageContext) throws IOException {
 		request = pageContext.getRequest();
-		out = pageContext.getResponse().getOutputStream();
+		out = pageContext.getOut();
 
 		CmsFlexController flexController = CmsFlexController.getController(pageContext.getRequest());
 		cmsObject = flexController.getCmsObject();
@@ -436,7 +435,7 @@ public class OpenCmsIDEConnector {
 					publishManager.publishProject(cmsObject, report, publishList);
 				}
 				catch (CmsException e) {
-					String message = "Error publishing the resources";
+					String message = "Error publishing the resources: " + e.getMessage();
 					warnings.append(message).append("\n");
 					LOG.warn(message, e);
 					hasWarnings = true;
@@ -477,7 +476,7 @@ public class OpenCmsIDEConnector {
 		}
 		return arr;
 	}
-
+	
 	/**
 	 * Internal helper method streaming the given String to the response output stream.
 	 * @param str   The string to be written to the response output stream.

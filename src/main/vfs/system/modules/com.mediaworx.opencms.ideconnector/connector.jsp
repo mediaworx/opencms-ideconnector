@@ -5,10 +5,13 @@
 
 	Author: Kai Widman, 2013/2014 mediaworx Berlin AG
 --%><%@page
-	contentType="text/plain; charset=UTF-8"
-	pageEncoding="UTF-8"
-	import="com.mediaworx.opencms.ideconnector.OpenCmsIDEConnector"
+	import="com.mediaworx.opencms.ideconnector.OpenCmsIDEConnector, org.opencms.flex.CmsFlexController"
 %><%
+	CmsFlexController flexController = CmsFlexController.getController(request);
+	HttpServletResponse topResponse = flexController.getTopResponse();
+	topResponse.setContentType("text/plain; charset=UTF-8");
+	topResponse.setCharacterEncoding("UTF-8");
+
 	OpenCmsIDEConnector connector = new OpenCmsIDEConnector(pageContext);
 	connector.executeAction();
 %>
