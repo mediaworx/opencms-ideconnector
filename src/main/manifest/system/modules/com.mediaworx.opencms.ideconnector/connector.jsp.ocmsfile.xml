@@ -5,12 +5,16 @@
         <type>jsp</type>
         <uuidstructure>64aeb286-7f6d-11e3-b612-210cc9a3bba6</uuidstructure>
         <uuidresource>64aeb287-7f6d-11e3-b612-210cc9a3bba6</uuidresource>
-        <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+        <datelastmodified>Tue, 15 Jul 2014 12:18:08 GMT</datelastmodified>
         <userlastmodified>Admin</userlastmodified>
         <datecreated>Fri, 17 Jan 2014 11:49:16 GMT</datecreated>
         <usercreated>Admin</usercreated>
         <flags>0</flags>
         <properties>
+            <property>
+                <name>content-encoding</name>
+                <value><![CDATA[UTF-8]]></value>
+            </property>
             <property type="shared">
                 <name>export</name>
                 <value><![CDATA[false]]></value>
