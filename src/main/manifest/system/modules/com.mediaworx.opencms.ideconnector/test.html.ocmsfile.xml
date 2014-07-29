@@ -1,13 +1,13 @@
 <fileinfo>
     <file>
-        <source>system/modules/com.mediaworx.opencms.ideconnector/test.html</source>
-        <destination>system/modules/com.mediaworx.opencms.ideconnector/test.html</destination>
+        <source>${source}</source>
+        <destination>${destination}</destination>
         <type>plain</type>
-        <uuidstructure>f504c8aa-0bf2-11e4-9e9d-b54eb22890b7</uuidstructure>
-        <uuidresource>f504c8ab-0bf2-11e4-9e9d-b54eb22890b7</uuidresource>
-        <datelastmodified>Tue, 15 Jul 2014 11:27:05 GMT</datelastmodified>
+        <uuidstructure>${uuidstructure}</uuidstructure>
+        <uuidresource>${uuidresource}</uuidresource>
+        <datelastmodified>${datelastmodified}</datelastmodified>
         <userlastmodified>Admin</userlastmodified>
-        <datecreated>Tue, 15 Jul 2014 07:38:04 GMT</datecreated>
+        <datecreated>${datecreated}</datecreated>
         <usercreated>Admin</usercreated>
         <flags>0</flags>
         <properties/>

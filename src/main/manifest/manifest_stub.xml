@@ -2,7 +2,7 @@
     <info>
         <creator>Admin</creator>
         <opencms_version>8.5.1</opencms_version>
-        <createdate>Tue, 29 Jul 2014 12:46:37 GMT</createdate>
+        <createdate>${createdate}</createdate>
         <infoproject>Offline</infoproject>
         <export_version>7</export_version>
     </info>

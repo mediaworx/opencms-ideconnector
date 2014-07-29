@@ -1,13 +1,13 @@
 <fileinfo>
     <file>
-        <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</source>
-        <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</destination>
+        <source>${source}</source>
+        <destination>${destination}</destination>
         <type>binary</type>
-        <uuidstructure>ba2180e2-7f6c-11e3-b612-210cc9a3bba6</uuidstructure>
-        <uuidresource>ba2180e3-7f6c-11e3-b612-210cc9a3bba6</uuidresource>
-        <datelastmodified>Tue, 29 Jul 2014 11:48:27 GMT</datelastmodified>
+        <uuidstructure>${uuidstructure}</uuidstructure>
+        <uuidresource>${uuidresource}</uuidresource>
+        <datelastmodified>${datelastmodified}</datelastmodified>
         <userlastmodified>Admin</userlastmodified>
-        <datecreated>Fri, 17 Jan 2014 11:44:30 GMT</datecreated>
+        <datecreated>${datecreated}</datecreated>
         <usercreated>Admin</usercreated>
         <flags>0</flags>
         <properties/>

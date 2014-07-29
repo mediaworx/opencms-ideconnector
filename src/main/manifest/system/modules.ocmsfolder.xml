@@ -1,10 +1,10 @@
 <file>
-    <destination>system/modules</destination>
+    <destination>${destination}</destination>
     <type>folder</type>
-    <uuidstructure>7d298fc8-8e80-11e2-b5e7-b54eb22890b7</uuidstructure>
-    <datelastmodified>Sat, 16 Mar 2013 21:28:48 GMT</datelastmodified>
+    <uuidstructure>${uuidstructure}</uuidstructure>
+    <datelastmodified>${datelastmodified}</datelastmodified>
     <userlastmodified>Admin</userlastmodified>
-    <datecreated>Sat, 16 Mar 2013 21:28:48 GMT</datecreated>
+    <datecreated>${datecreated}</datecreated>
     <usercreated>Admin</usercreated>
     <flags>0</flags>
     <properties/>
