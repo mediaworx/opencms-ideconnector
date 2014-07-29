@@ -228,9 +228,9 @@ public class MetaXmlHelper extends CmsExport {
 
 			// only write <source> if resource is a file
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_SOURCE).addText(fileName);
+				fileElement.addElement(CmsImportVersion7.N_SOURCE).addText("${" + CmsImportVersion7.N_SOURCE + "}");
 			}
-			fileElement.addElement(CmsImportVersion7.N_DESTINATION).addText(fileName);
+			fileElement.addElement(CmsImportVersion7.N_DESTINATION).addText("${" + CmsImportVersion7.N_DESTINATION + "}");
 			fileElement.addElement(CmsImportVersion7.N_TYPE).addText(OpenCms.getResourceManager().getResourceType(resource.getTypeId()).getTypeName());
 
 			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
