@@ -112,12 +112,16 @@ import java.util.Locale;
  * </pre>
  * Manifest stubs can be used &mdash; together with resource meta data, see below &mdash; to generate module manifests
  * right in the IDE (or through Continuous Integration).
+ * <br />
+ * If the parameter <code>useMetaVariables</code> (see below for details) is set to <code>true</code>, the createdate
+ * is replaced by the variable <code>${createdate}</code>.
  * <br /><br />
  * <strong>action=resourceInfos</strong>
  * <br /><br />
  * The action "resourceInfos" is used to retrieve meta data for VFS resources (files and folders). The json array
  * provided as parameter <code>json</code> must contain the root paths of the resources for which meta data should be
  * returned.
+ *
  * <br /><br />
  * Sample parameters:
  * <ul>
@@ -135,11 +139,11 @@ import java.util.Locale;
  * [
  *   {
  *     "id"  : "\/testfolder",
- *     "xml" : "&lt;file&gt;\n    &lt;destination&gt;testfolder&lt;\/destination&gt;\n    &lt;type&gt;folder&lt;\/type&gt;\n    &lt;uuidstructure&gt;41a22af8-4b8f-11e3-b543-210cc9a3bba6&lt;\/uuidstructure&gt;\n    &lt;datelastmodified&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;\/datelastmodified&gt;\n    &lt;userlastmodified&gt;Admin&lt;\/userlastmodified&gt;\n    &lt;datecreated&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;\/datecreated&gt;\n    &lt;usercreated&gt;Admin&lt;\/usercreated&gt;\n    &lt;flags&gt;0&lt;\/flags&gt;\n    &lt;properties\/&gt;\n    &lt;relations\/&gt;\n    &lt;accesscontrol\/&gt;\n&lt;\/file&gt;"
+ *     "xml" : "&lt;file&gt;\n    &lt;destination&gt;${destination}&lt;\/destination&gt;\n    &lt;type&gt;folder&lt;\/type&gt;\n    &lt;uuidstructure&gt;41a22af8-4b8f-11e3-b543-210cc9a3bba6&lt;\/uuidstructure&gt;\n    &lt;datelastmodified&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;\/datelastmodified&gt;\n    &lt;userlastmodified&gt;Admin&lt;\/userlastmodified&gt;\n    &lt;datecreated&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;\/datecreated&gt;\n    &lt;usercreated&gt;Admin&lt;\/usercreated&gt;\n    &lt;flags&gt;0&lt;\/flags&gt;\n    &lt;properties\/&gt;\n    &lt;relations\/&gt;\n    &lt;accesscontrol\/&gt;\n&lt;\/file&gt;"
  *   },
  *   {
  *     "id"  : "\/testfolder\/testfile.jsp",
- *     "xml" : "&lt;fileinfo&gt;\n    &lt;file&gt;\n        &lt;source&gt;testfolder\/testfile.jsp&lt;\/source&gt;\n        &lt;destination&gt;testfolder\/testfile.jsp&lt;\/destination&gt;\n        &lt;type&gt;plain&lt;\/type&gt;\n        &lt;uuidstructure&gt;0e436b9f-5c5d-11e3-91b4-210cc9a3bba6&lt;\/uuidstructure&gt;\n        &lt;uuidresource&gt;0e436ba0-5c5d-11e3-91b4-210cc9a3bba6&lt;\/uuidresource&gt;\n        &lt;datelastmodified&gt;Thu, 05 Dec 2013 23:31:52 GMT&lt;\/datelastmodified&gt;\n        &lt;userlastmodified&gt;Admin&lt;\/userlastmodified&gt;\n        &lt;datecreated&gt;Tue, 03 Dec 2013 20:54:09 GMT&lt;\/datecreated&gt;\n        &lt;usercreated&gt;Admin&lt;\/usercreated&gt;\n        &lt;flags&gt;0&lt;\/flags&gt;\n        &lt;properties\/&gt;\n        &lt;relations\/&gt;\n        &lt;accesscontrol\/&gt;\n    &lt;\/file&gt;\n    &lt;siblingcount&gt;1&lt;\/siblingcount&gt;\n&lt;\/fileinfo&gt;"
+ *     "xml" : "&lt;fileinfo&gt;\n    &lt;file&gt;\n        &lt;source&gt;${source}&lt;\/source&gt;\n        &lt;destination&gt;${destination}&lt;\/destination&gt;\n        &lt;type&gt;plain&lt;\/type&gt;\n        &lt;uuidstructure&gt;0e436b9f-5c5d-11e3-91b4-210cc9a3bba6&lt;\/uuidstructure&gt;\n        &lt;uuidresource&gt;0e436ba0-5c5d-11e3-91b4-210cc9a3bba6&lt;\/uuidresource&gt;\n        &lt;datelastmodified&gt;Thu, 05 Dec 2013 23:31:52 GMT&lt;\/datelastmodified&gt;\n        &lt;userlastmodified&gt;Admin&lt;\/userlastmodified&gt;\n        &lt;datecreated&gt;Tue, 03 Dec 2013 20:54:09 GMT&lt;\/datecreated&gt;\n        &lt;usercreated&gt;Admin&lt;\/usercreated&gt;\n        &lt;flags&gt;0&lt;\/flags&gt;\n        &lt;properties\/&gt;\n        &lt;relations\/&gt;\n        &lt;accesscontrol\/&gt;\n    &lt;\/file&gt;\n    &lt;siblingcount&gt;1&lt;\/siblingcount&gt;\n&lt;\/fileinfo&gt;"
  *   }
  * ]
  * </pre>
@@ -150,7 +154,7 @@ import java.util.Locale;
  * Sample xml for VFS folders:
  * <pre>
  * &lt;file&gt;
- *     &lt;destination&gt;testfolder&lt;/destination&gt;
+ *     &lt;destination&gt;${destination}&lt;/destination&gt;
  *     &lt;type&gt;folder&lt;/type&gt;
  *     &lt;uuidstructure&gt;41a22af8-4b8f-11e3-b543-210cc9a3bba6&lt;/uuidstructure&gt;
  *     &lt;datelastmodified&gt;Tue, 12 Nov 2013 11:40:40 GMT&lt;/datelastmodified&gt;
@@ -167,8 +171,8 @@ import java.util.Locale;
  * <pre>
  * &lt;fileinfo&gt;
  *     &lt;file&gt;
- *         &lt;source&gt;testfolder/testfile.jsp&lt;/source&gt;
- *         &lt;destination&gt;testfolder/testfile.jsp&lt;/destination&gt;
+ *         &lt;source&gt;${source}&lt;/source&gt;
+ *         &lt;destination&gt;${destination}&lt;/destination&gt;
  *         &lt;type&gt;plain&lt;/type&gt;
  *         &lt;uuidstructure&gt;0e436b9f-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidstructure&gt;
  *         &lt;uuidresource&gt;0e436ba0-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidresource&gt;
@@ -184,7 +188,8 @@ import java.util.Locale;
  *     &lt;siblingcount&gt;1&lt;/siblingcount&gt;
  * &lt;/fileinfo&gt;
  * </pre>
- * The returned xml structures can be used to fill the empty files node of the manifest stub (see above).
+ * The returned xml structures can be used to fill the empty files node of the manifest stub (see above). Source and
+ * destination paths are represented by variables and must be set when generating the manifest.
  * <br /><br />
  * <strong>action=publishResources</strong>
  * <br /><br />
@@ -218,8 +223,8 @@ import java.util.Locale;
  * <pre>
  * &lt;fileinfo&gt;
  *     &lt;file&gt;
- *         &lt;source&gt;testfolder/testfile.jsp&lt;/source&gt;
- *         &lt;destination&gt;testfolder/testfile.jsp&lt;/destination&gt;
+ *         &lt;source&gt;${source}&lt;/source&gt;
+ *         &lt;destination&gt;${destination}&lt;/destination&gt;
  *         &lt;type&gt;plain&lt;/type&gt;
  *         &lt;uuidstructure&gt;${uuidstructure}&lt;/uuidstructure&gt;
  *         &lt;uuidresource&gt;${uuidresource}&lt;/uuidresource&gt;
