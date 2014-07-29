@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <export>
     <info>
         <creator>Admin</creator>
         <opencms_version>8.5.1</opencms_version>
-        <createdate>Mon, 16 Jun 2014 11:01:55 GMT</createdate>
+        <createdate>Tue, 29 Jul 2014 12:46:37 GMT</createdate>
         <infoproject>Offline</infoproject>
         <export_version>7</export_version>
     </info>
@@ -13,7 +13,7 @@
         <group>com.mediaworx.opencms</group>
         <class/>
         <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
-        <version>1.3</version>
+        <version>1.4</version>
         <authorname><![CDATA[Kai Widmann]]></authorname>
         <authoremail><![CDATA[widmann@mediaworx.com]]></authoremail>
         <datecreated/>
@@ -157,7 +157,7 @@
             <type>binary</type>
             <uuidstructure>ba2180e2-7f6c-11e3-b612-210cc9a3bba6</uuidstructure>
             <uuidresource>ba2180e3-7f6c-11e3-b612-210cc9a3bba6</uuidresource>
-            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <datelastmodified>Tue, 29 Jul 2014 11:48:27 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Fri, 17 Jan 2014 11:44:30 GMT</datecreated>
             <usercreated>Admin</usercreated>
@@ -172,7 +172,7 @@
             <type>binary</type>
             <uuidstructure>64a7fbc4-7f6d-11e3-b612-210cc9a3bba6</uuidstructure>
             <uuidresource>64a7fbc5-7f6d-11e3-b612-210cc9a3bba6</uuidresource>
-            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <datelastmodified>Tue, 29 Jul 2014 11:48:27 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Fri, 17 Jan 2014 11:49:16 GMT</datecreated>
             <usercreated>Admin</usercreated>
@@ -187,17 +187,36 @@
             <type>jsp</type>
             <uuidstructure>64aeb286-7f6d-11e3-b612-210cc9a3bba6</uuidstructure>
             <uuidresource>64aeb287-7f6d-11e3-b612-210cc9a3bba6</uuidresource>
-            <datelastmodified>Mon, 16 Jun 2014 12:32:06 GMT</datelastmodified>
+            <datelastmodified>Tue, 15 Jul 2014 12:18:08 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Fri, 17 Jan 2014 11:49:16 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties>
+                <property>
+                    <name>content-encoding</name>
+                    <value>UTF-8</value>
+                </property>
                 <property type="shared">
                     <name>export</name>
                     <value>false</value>
                 </property>
             </properties>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/test.html</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/test.html</destination>
+            <type>plain</type>
+            <uuidstructure>f504c8aa-0bf2-11e4-9e9d-b54eb22890b7</uuidstructure>
+            <uuidresource>f504c8ab-0bf2-11e4-9e9d-b54eb22890b7</uuidresource>
+            <datelastmodified>Tue, 15 Jul 2014 11:27:05 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Tue, 15 Jul 2014 07:38:04 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
             <relations/>
             <accesscontrol/>
         </file>

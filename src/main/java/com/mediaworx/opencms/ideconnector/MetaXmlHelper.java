@@ -183,7 +183,8 @@ public class MetaXmlHelper extends CmsExport {
 		Element info = DocumentHelper.createElement(CmsImportExportManager.N_INFO);
 		info.addElement(CmsImportExportManager.N_CREATOR).addText(OpenCms.getDefaultUsers().getUserAdmin());
 		info.addElement(CmsImportExportManager.N_OC_VERSION).addText(OpenCms.getSystemInfo().getVersionNumber());
-		info.addElement(CmsImportExportManager.N_DATE).addText(CmsDateUtil.getHeaderDate(System.currentTimeMillis()));
+		String headerDate = useMetaVariablesEnabled ? "${" + CmsImportExportManager.N_DATE + "}" : CmsDateUtil.getHeaderDate(System.currentTimeMillis());
+		info.addElement(CmsImportExportManager.N_DATE).addText(headerDate);
 		info.addElement(CmsImportExportManager.N_INFO_PROJECT).addText("Offline");
 		info.addElement(CmsImportExportManager.N_VERSION).addText(CmsImportExportManager.EXPORT_VERSION);
 		return info;

@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>opencms-ideconnector</artifactId>
-	<version>1.3</version>
+	<version>1.4</version>
 	<packaging>opencms-module</packaging>
 	<name>OpenCms IDE connector</name>
 
