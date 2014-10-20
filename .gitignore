@@ -2,5 +2,3 @@
 *.iml
 target
 src/main/manifest/manifest.xml
-com.mediaworx.opencms.ideconnector_*.zip
-/*.zip
