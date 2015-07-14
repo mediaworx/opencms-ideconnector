@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>OpenCms IDE Connector Test</title>
+	<style type="text/css">
+		label {
+			display: inline-block;
+			width: 155px;
+			text-align: right;
+			vertical-align: top;
+		}
+		input#submit {
+			margin-left: 162px;
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>OpenCms IDE Connector Test</h1>
+	<form method="post" action="connector.jsp">
+		<div>
+			<label for="action">Action:</label>
+			<select id="action" name="action">
+				<option selected="selected">resourceInfos</option>
+				<option>moduleManifests</option>
+				<option>publishResources</option>
+			</select>
+		</div>
+		<div>
+			<label for="json">JSON:</label>
+			<textarea id="json" name="json" cols="120" rows="8">["/system/modules","/system/workplace"]</textarea>
+		</div>
+		<div>
+			<label for="user">User:</label>
+			<input type="text" id="user" name="user" value="Admin"/>
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" value="admin"/>
+		</div>
+		<div>
+			<label for="useMetaVariables">Use Meta Variables:</label>
+			<input type="checkbox" id="useMetaVariables" name="useMetaVariables" value="true" />
+		</div>
+		<div>
+			<label for="publishSubResources">Publish Sub Resources:</label>
+			<input type="checkbox" id="publishSubResources" name="publishSubResources" value="true" />
+		</div>
+		<input type="submit" id="submit" name="submit" value="Go" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<export>
+    <info>
+        <creator>Admin</creator>
+        <opencms_version>9.5.2</opencms_version>
+        <createdate>${createdate}</createdate>
+        <infoproject>Offline</infoproject>
+        <export_version>7</export_version>
+    </info>
+    <module>
+        <name>com.mediaworx.opencms.ideconnector</name>
+        <nicename><![CDATA[Connector for IDEs]]></nicename>
+        <group>com.mediaworx.opencms</group>
+        <class/>
+        <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
+        <version>1.5</version>
+        <authorname><![CDATA[Kai Widmann]]></authorname>
+        <authoremail><![CDATA[widmann@mediaworx.com]]></authoremail>
+        <datecreated/>
+        <userinstalled/>
+        <dateinstalled/>
+        <dependencies/>
+        <exportpoints>
+            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector/classes/" destination="WEB-INF/classes/"/>
+            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector/lib/" destination="WEB-INF/lib/"/>
+        </exportpoints>
+        <resources>
+            <resource uri="/system/modules/com.mediaworx.opencms.ideconnector/"/>
+        </resources>
+        <parameters/>
+    </module>
+    <files/>
+</export>
