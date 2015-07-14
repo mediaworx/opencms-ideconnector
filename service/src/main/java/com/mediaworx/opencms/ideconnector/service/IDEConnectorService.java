@@ -76,11 +76,12 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		LOG.info("requestUri: " + requestUri);
 		LOG.info("service: " + service);
 
+		// TODO: use reflection on self to locate methods (for this all methods should be self contained and void)
 		if ("login".equals(service)) {
-			objectMapper.writeValue(out, login());
+			login();
 		}
 		else if ("logout".equals(service)) {
-			objectMapper.writeValue(out, logout());
+			logout();
 		}
 		else if ("importModules".equals(service)) {
 			importModules();
@@ -101,7 +102,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		super.init();
 	}
 
-	private LoginStatus login() throws ServletException, IOException {
+	private void login() throws ServletException, IOException {
 
 		LoginStatus status = new LoginStatusImpl();
 
@@ -114,7 +115,8 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 			LOG.error(message, e);
 			status.setLoggedIn(false);
 			status.setMessage(message + e.getMessage() + ".\n StackTrace available in the OpenCms log file.");
-			return status;
+			objectMapper.writeValue(out, status);
+			return;
 		}
 
 		String user = request.getParameter("u");
@@ -128,39 +130,23 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 			LOG.error(message, e);
 			status.setLoggedIn(false);
 			status.setMessage(message + e.getMessage() + ".\n StackTrace available in the OpenCms log file.");
-			return status;
+			objectMapper.writeValue(out, status);
+			return;
 		}
 
-		CmsUUID uuid = new CmsUUID();
-		String token = uuid.getStringValue();
-
+		String token = (new CmsUUID()).getStringValue();
 		storeCmsObject(token, cmsObject);
 
 		status.setLoggedIn(true);
-		status.setMessage("User " + user + " logged in succesfully.");
+		status.setMessage("User " + user + " logged in successfully.");
 		status.setToken(token);
 
-		return status;
+		objectMapper.writeValue(out, status);
 	}
 
-	private String logout() {
+	private void logout() {
 		cmsObjects.remove(getToken());
-		return "success";
-	}
-
-	private boolean checkLogin() {
-		if (cmsObjects.containsKey(getToken())) {
-			return true;
-		}
-		else {
-			try {
-				response.sendError(401, "Not logged in, access denied.");
-			}
-			catch (IOException e) {
-				LOG.error("Exception sending 401 (not logged in)", e);
-			}
-			return false;
-		}
+		out.println("success");
 	}
 
 	private void importModules() {
@@ -173,6 +159,9 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 			}
 		}
 	}
+
+
+
 
 	private void importModule(String moduleZipPath) {
 
@@ -212,6 +201,21 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 			LOG.error("Error importing module " + moduleZipPath, e);
 		}
 
+	}
+
+	private boolean checkLogin() {
+		if (cmsObjects.containsKey(getToken())) {
+			return true;
+		}
+		else {
+			try {
+				response.sendError(401, "Not logged in, access denied.");
+			}
+			catch (IOException e) {
+				LOG.error("Exception sending 401 (not logged in)", e);
+			}
+			return false;
+		}
 	}
 
 	private String getToken() {
