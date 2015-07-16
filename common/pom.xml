@@ -8,12 +8,11 @@
 	<artifactId>ideconnector-common</artifactId>
 	<version>1.5</version>
 	<packaging>jar</packaging>
-	<name>OpenCms IDE connector - Common</name>
 
-	<organization>
-		<name>mediaworx berlin AG</name>
-		<url>http://mediaworx.com</url>
-	</organization>
+	<name>OpenCms IDE connector - Common</name>
+	<description>Common interfaces and definitions for the OpenCms IDE connector service and client.</description>
+	<url>http://mediaworx.com</url>
+
 	<licenses>
 		<license>
 			<name>GNU Lesser General Public License</name>
@@ -21,10 +20,19 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<organization>
+		<name>mediaworx berlin AG</name>
+		<url>http://mediaworx.com</url>
+	</organization>
+
 	<developers>
 		<developer>
-			<name>mediaworx berlin AG</name>
-			<url>http://mediaworx.com</url>
+			<id>widmann@mediaworx.com</id>
+			<name>Kai Widmann</name>
+			<email>widmann@mediaworx.com</email>
+			<organization>mediaworx berlin AG</organization>
+			<organizationUrl>http://mediaworx.com</organizationUrl>
 		</developer>
 	</developers>
 

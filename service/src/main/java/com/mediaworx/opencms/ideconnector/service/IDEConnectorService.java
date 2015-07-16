@@ -3,10 +3,10 @@ package com.mediaworx.opencms.ideconnector.service;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
 import com.fasterxml.jackson.module.mrbean.MrBeanModule;
 import com.mediaworx.opencms.ideconnector.data.LoginStatus;
 import com.mediaworx.opencms.ideconnector.dataimpl.LoginStatusImpl;
+import com.mediaworx.opencms.ideconnector.def.IDEConnectorConst;
 import org.apache.commons.io.output.WriterOutputStream;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -24,7 +24,11 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,8 +38,8 @@ import java.util.Map;
  * Created by kai on 10.07.15.
  */
 @WebServlet(
-		name = "IDEConnector",
-		urlPatterns = {"/IDEConnector/*"}
+		name = "ideConnector",
+		urlPatterns = {"/ideConnector/*"}
 )
 public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 
@@ -55,7 +59,6 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 
 		objectMapper = new ObjectMapper();
 		objectMapper.registerModule(new MrBeanModule());
-		objectMapper.registerModule(new JSR310Module());
 		objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
 		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	}
@@ -64,30 +67,34 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 
 		this.request = request;
 		this.response = response;
+
+		LOG.info("Setting content type to text/plain; charset=" + StandardCharsets.UTF_8.name());
+		response.setContentType("text/plain; charset=" + StandardCharsets.UTF_8.name());
+		LOG.info("Setting character encoding to " + StandardCharsets.UTF_8.name());
+		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+
 		out = response.getWriter();
 
 		String servletPath = request.getServletPath();
 		String requestUri = request.getRequestURI();
 		String service = requestUri.substring(servletPath.length() + 1);
 
-		response.setContentType("text/plain");
-
 		LOG.info("servletPath: " + servletPath);
 		LOG.info("requestUri: " + requestUri);
 		LOG.info("service: " + service);
 
 		// TODO: use reflection on self to locate methods (for this all methods should be self contained and void)
-		if ("login".equals(service)) {
+		if (IDEConnectorConst.SERVICE_LOGIN.equals(service)) {
 			login();
 		}
-		else if ("logout".equals(service)) {
-			logout();
-		}
-		else if ("importModules".equals(service)) {
+		else if (IDEConnectorConst.SERVICE_IMPORT_MODULE.equals(service)) {
 			importModules();
 		}
+		else if (IDEConnectorConst.SERVICE_LOGOUT.equals(service)) {
+			logout();
+		}
 		else {
-			response.sendError(404, "Service not found");
+			response.sendError(404, "Service not found: " + service);
 		}
 	}
 
@@ -119,8 +126,8 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 			return;
 		}
 
-		String user = request.getParameter("u");
-		String password = request.getParameter("p");
+		String user = request.getParameter(IDEConnectorConst.PARAM_USER);
+		String password = request.getParameter(IDEConnectorConst.PARAM_PASSWORD);
 
 		try {
 			cmsObject.loginUser(user, password);
@@ -219,7 +226,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 	}
 
 	private String getToken() {
-		return request.getParameter("t");
+		return request.getParameter(IDEConnectorConst.PARAM_TOKEN);
 	}
 
 	private CmsObject getCmsObject() {
@@ -227,7 +234,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 	}
 
 	private String getJson() {
-		return request.getParameter("j");
+		return request.getParameter(IDEConnectorConst.PARAM_JSON);
 	}
 
 	private List<String> getJsonAsStringList() {
