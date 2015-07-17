@@ -175,7 +175,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		String moduleZipName = StringUtils.substringAfterLast(moduleZipPath, File.separator);
 		String moduleName = StringUtils.substringBeforeLast(moduleZipName, "_");
 
-		out.println("######## Importing module " + moduleName + " START ########");
+		out.println("######## Importing module zip " + moduleZipName + " START ########");
 		out.flush();
 
 		CmsObject cmsObject = getCmsObject();
@@ -201,7 +201,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 					report,
 					params);
 			ps.flush();
-			out.println("######## Importing module " + moduleName + " FINISHED ########");
+			out.println("######## Importing module zip " + moduleZipName + " FINISHED ########");
 			out.flush();
 		}
 		catch (CmsException e) {

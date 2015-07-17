@@ -14,10 +14,12 @@ import java.util.List;
 public class IDEConnectorClient {
 
 	private IDEConnectorClientConnector connector;
+	private IDEConnectorClientConfiguration configuration;
 
 	private String token;
 
 	public IDEConnectorClient(IDEConnectorClientConfiguration config) {
+		this.configuration = config;
 		this.connector = new IDEConnectorClientConnector(config);
 	}
 
@@ -67,4 +69,11 @@ public class IDEConnectorClient {
 		);
 	}
 
+	public IDEConnectorClientConfiguration getConfiguration() {
+		return configuration;
+	}
+
+	public void setConfiguration(IDEConnectorClientConfiguration configuration) {
+		this.configuration = configuration;
+	}
 }
