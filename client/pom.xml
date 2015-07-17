@@ -41,7 +41,6 @@
 	</properties>
 
 	<build>
-		<outputDirectory>target</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

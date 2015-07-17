@@ -6,6 +6,7 @@ import com.mediaworx.opencms.ideconnector.consumer.IDEConnectorResponsePrinter;
 import com.mediaworx.opencms.ideconnector.data.LoginStatus;
 import com.mediaworx.opencms.ideconnector.def.IDEConnectorConst;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,7 +54,7 @@ public class IDEConnectorClient {
 	}
 
 	/**
-	 * Imports the modules at the given local paths and streams the OpenCms import log to the PrintStream
+	 * Imports the modules at the given local paths and streams the OpenCms import log to the IDEConnectorResponsePrinter
 	 * @param modulePaths   paths to the module zips (local FS)
 	 * @param printer       printer used to stream the Connector's response
 	 */
@@ -67,6 +68,17 @@ public class IDEConnectorClient {
 				params,
 				printer
 		);
+	}
+
+	/**
+	 * Imports the module at the given local path and streams the OpenCms import log to the IDEConnectorResponsePrinter
+	 * @param modulePath   path to the module zips (local FS)
+	 * @param printer      printer used to stream the Connector's response
+	 */
+	public void importModule(String modulePath, IDEConnectorResponsePrinter printer) {
+		List<String> modulePaths = new ArrayList<>(1);
+		modulePaths.add(modulePath);
+		importModules(modulePaths, printer);
 	}
 
 	public IDEConnectorClientConfiguration getConfiguration() {
