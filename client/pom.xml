@@ -62,7 +62,7 @@
 		<dependency>
 			<groupId>com.mediaworx.opencms</groupId>
 			<artifactId>ideconnector-common</artifactId>
-			<version>1.5</version>
+			<version>1.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

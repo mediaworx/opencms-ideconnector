@@ -247,7 +247,7 @@ public class MetaXmlHelper extends CmsExport {
 
 			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
+				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
 			}
 			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
 			String userNameLastModified;
@@ -258,7 +258,7 @@ public class MetaXmlHelper extends CmsExport {
 				userNameLastModified = OpenCms.getDefaultUsers().getUserAdmin();
 			}
 			fileElement.addElement(CmsImportVersion7.N_USERLASTMODIFIED).addText(userNameLastModified);
-			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
+			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
 			String userNameCreated;
 			try {
 				userNameCreated = cmsObject.readUser(resource.getUserCreated()).getName();
