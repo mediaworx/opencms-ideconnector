@@ -113,7 +113,7 @@ import java.util.Locale;
  * Manifest stubs can be used &mdash; together with resource meta data, see below &mdash; to generate module manifests
  * right in the IDE (or through Continuous Integration).
  * <br />
- * If the parameter <code>useMetaVariables</code> (see below for details) is set to <code>true</code>, the createdate
+ * If the parameter <code>useDateVariables</code> (see below for details) is set to <code>true</code>, the createdate
  * is replaced by the variable <code>${createdate}</code>.
  * <br /><br />
  * <strong>action=resourceInfos</strong>
@@ -213,13 +213,40 @@ import java.util.Locale;
  * "/testfolder/testfile.jsp could not be read from the VFS" or "Error retrieving CmsPublishList from OpenCms".
  * Messages of multiple errors that occur during one publish request are concatenated.
  * <br /><br />
- * <strong>Optional parameter "useMetaVariables"</strong>
+ * <strong>Optional parameter "useDateVariables"</strong>
  * <br /><br />
- * There's an optional parameter <code>useMetaVariables</code> that can be used to replace the meta variables
- * <code>uuidstructure</code>, <code>uuidresource</code>, <code>datelastmodified</code> and
- * <code>datecreated</code> with placeholders. If that parameter is set to <code>true</code>, the corresponding xml
- * nodes will not be filled with real values, but with placeholders. The following example shows a file node with
- * <code>useMetaVariables</code> set to <code>true</code>:
+ * There's an optional parameter <code>useDateVariables</code> that can be used to replace the meta variables
+ * <code>datelastmodified</code> and <code>datecreated</code> with placeholders. If that parameter is set to
+ * <code>true</code>, the corresponding xml nodes will not be filled with real values, but with placeholders. The
+ * following example shows a file node with <code>useDateVariables</code> set to <code>true</code>:
+ * <pre>
+ * &lt;fileinfo&gt;
+ *     &lt;file&gt;
+ *         &lt;source&gt;${source}&lt;/source&gt;
+ *         &lt;destination&gt;${destination}&lt;/destination&gt;
+ *         &lt;type&gt;plain&lt;/type&gt;
+ *         &lt;uuidstructure&gt;0e436b9f-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidstructure&gt;
+ *         &lt;uuidresource&gt;0e436ba0-5c5d-11e3-91b4-210cc9a3bba6&lt;/uuidresource&gt;
+ *         &lt;datelastmodified&gt;${datelastmodified}&lt;/datelastmodified&gt;
+ *         &lt;userlastmodified&gt;Admin&lt;/userlastmodified&gt;
+ *         &lt;datecreated&gt;${datecreated}&lt;/datecreated&gt;
+ *         &lt;usercreated&gt;Admin&lt;/usercreated&gt;
+ *         &lt;flags&gt;0&lt;/flags&gt;
+ *         &lt;properties/&gt;
+ *         &lt;relations/&gt;
+ *         &lt;accesscontrol/&gt;
+ *     &lt;/file&gt;
+ *     &lt;siblingcount&gt;1&lt;/siblingcount&gt;
+ * &lt;/fileinfo&gt;
+ * </pre>
+ * <br /><br />
+ * <strong>Optional parameter "useIdVariables" (should not be used).</strong>
+ * <br /><br />
+ * There's an optional parameter <code>useIdVariables</code> that can be used to replace the meta variables
+ * <code>uuidstructure</code> and <code>uuidresource</code> with placeholders. If that parameter is set to
+ * <code>true</code>, the corresponding xml nodes will not be filled with real values, but with placeholders. The
+ * following example shows a file node with <code>useIdVariables</code> (and <code>useDateVariables</code>) set to
+ * <code>true</code>:
  * <pre>
  * &lt;fileinfo&gt;
  *     &lt;file&gt;
@@ -243,9 +270,13 @@ import java.util.Locale;
  * Replacing the UUIDs and dates with placeholders might make sense if multiple developers are working on the same
  * modules and are using some kind of version control (Git or SVN). If the real IDs and dates are used, there may
  * be conflicts when trying to commit meta data if the developers create and update the same resources at different
- * times. If placeholders are used, they have to be replaced by sensible data upon manifest creation.
+ * times. If placeholders are used, they have to be replaced by sensible data upon manifest creation.<br /><br />
+ * <strong>Using <code>useIdVariables</code> might be a bad idea if you want to have content in your modules. Under some
+ * circumstances content references depend on static IDs and with <code>useIdVariables</code> set to <code>true</code>,
+ * new IDs are created whenever the manifest is generated. So we advise against using this option. It's there for
+ * downward compatibility reasons.</strong>
  *
- * @author Kai Widman, 2013/2014 mediaworx Berlin AG
+ * @author Kai Widman, 2013/2014/2015 mediaworx Berlin AG
  */
 public class OpenCmsIDEConnector {
 
@@ -284,8 +315,10 @@ public class OpenCmsIDEConnector {
 		CmsFlexController flexController = CmsFlexController.getController(pageContext.getRequest());
 		cmsObject = flexController.getCmsObject();
 		xmlHelper = new MetaXmlHelper(cmsObject);
-		boolean useMetaVariables = "true".equals(request.getParameter("useMetaVariables"));
-		xmlHelper.setUseMetaVariables(useMetaVariables);
+		boolean useDateVariables = "true".equals(request.getParameter("useDateVariables"));
+		xmlHelper.setUseDateVariables(useDateVariables);
+		boolean useIdVariables = "true".equals(request.getParameter("useIdVariables"));
+		xmlHelper.setUseIdVariables(useIdVariables);
 		jsonParser = new JSONParser();
 
 		action = request.getParameter("action");

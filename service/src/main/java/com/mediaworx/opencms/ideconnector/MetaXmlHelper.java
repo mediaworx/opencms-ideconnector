@@ -41,7 +41,8 @@ public class MetaXmlHelper extends CmsExport {
 	private static final String NODE_SIBLING_COUNT = "siblingcount";
 
 	private CmsObject cmsObject;
-	private boolean useMetaVariablesEnabled = false;
+	private boolean useDateVariablesEnabled = false;
+	private boolean useIdVariablesEnabled = false;
 
 	/**
 	 * Creates a new MetaXmlHelper that uses the given CmsObject to read meta information for modules or resources from
@@ -53,14 +54,25 @@ public class MetaXmlHelper extends CmsExport {
 	}
 
 	/**
-	 * sets the flag useMetaVariablesEnabled. See {@link OpenCmsIDEConnector} for an explanation what
-	 * <code>useMetaVariables</code> does.
-	 * @param useMetaVariables <code>true</code> if meta data (resource UUID, structure UUID, modified date
-	 *                         and created date) should be replaced by placeholders), <code>false</code> otherwise
+	 * sets the flag useDateVariablesEnabled. See {@link OpenCmsIDEConnector} for an explanation what
+	 * <code>useDateVariables</code> does.
+	 * @param useMetaVariables <code>true</code> if date meta data (modified date and created date) should be replaced
+	 *                         by placeholders), <code>false</code> otherwise
 	 *
 	 */
-	public void setUseMetaVariables(boolean useMetaVariables) {
-		this.useMetaVariablesEnabled = useMetaVariables;
+	public void setUseDateVariables(boolean useMetaVariables) {
+		this.useDateVariablesEnabled = useMetaVariables;
+	}
+
+	/**
+	 * sets the flag useIdVariablesEnabled. See {@link OpenCmsIDEConnector} for an explanation what
+	 * <code>useIdVariables</code> does.
+	 *
+	 * @param useIdVariables <code>true</code> if ID meta data (resource UUID and structure UUID) should be replaced by
+	 *                       placeholders), <code>false</code> otherwise
+	 */
+	public void setUseIdVariables(boolean useIdVariables) {
+		this.useIdVariablesEnabled = useIdVariables;
 	}
 
 	/**
@@ -183,7 +195,7 @@ public class MetaXmlHelper extends CmsExport {
 		Element info = DocumentHelper.createElement(CmsImportExportManager.N_INFO);
 		info.addElement(CmsImportExportManager.N_CREATOR).addText(OpenCms.getDefaultUsers().getUserAdmin());
 		info.addElement(CmsImportExportManager.N_OC_VERSION).addText(OpenCms.getSystemInfo().getVersionNumber());
-		String headerDate = useMetaVariablesEnabled ? "${" + CmsImportExportManager.N_DATE + "}" : CmsDateUtil.getHeaderDate(System.currentTimeMillis());
+		String headerDate = useDateVariablesEnabled ? "${" + CmsImportExportManager.N_DATE + "}" : CmsDateUtil.getHeaderDate(System.currentTimeMillis());
 		info.addElement(CmsImportExportManager.N_DATE).addText(headerDate);
 		info.addElement(CmsImportExportManager.N_INFO_PROJECT).addText("Offline");
 		info.addElement(CmsImportExportManager.N_VERSION).addText(CmsImportExportManager.EXPORT_VERSION);
@@ -233,11 +245,11 @@ public class MetaXmlHelper extends CmsExport {
 			fileElement.addElement(CmsImportVersion7.N_DESTINATION).addText("${" + CmsImportVersion7.N_DESTINATION + "}");
 			fileElement.addElement(CmsImportVersion7.N_TYPE).addText(OpenCms.getResourceManager().getResourceType(resource.getTypeId()).getTypeName());
 
-			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
+			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
+				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
 			}
-			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
+			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
 			String userNameLastModified;
 			try {
 				userNameLastModified = cmsObject.readUser(resource.getUserLastModified()).getName();
@@ -246,7 +258,7 @@ public class MetaXmlHelper extends CmsExport {
 				userNameLastModified = OpenCms.getDefaultUsers().getUserAdmin();
 			}
 			fileElement.addElement(CmsImportVersion7.N_USERLASTMODIFIED).addText(userNameLastModified);
-			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useMetaVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
+			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
 			String userNameCreated;
 			try {
 				userNameCreated = cmsObject.readUser(resource.getUserCreated()).getName();
