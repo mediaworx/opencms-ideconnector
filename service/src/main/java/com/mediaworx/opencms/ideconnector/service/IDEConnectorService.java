@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.mrbean.MrBeanModule;
 import com.mediaworx.opencms.ideconnector.data.LoginStatus;
+import com.mediaworx.opencms.ideconnector.data.ModuleImportInfo;
 import com.mediaworx.opencms.ideconnector.dataimpl.LoginStatusImpl;
 import com.mediaworx.opencms.ideconnector.def.IDEConnectorConst;
 import org.apache.commons.io.output.WriterOutputStream;
@@ -159,10 +160,18 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 	private void importModules() {
 
 		if (checkLogin()) {
-			List<String> moduleZipPaths = getJsonAsStringList();
+			List<ModuleImportInfo> importInfos = getJsonAsList(ModuleImportInfo.class);
 
-			for (String moduleZipPath : moduleZipPaths) {
-				importModule(moduleZipPath);
+			int numModules = importInfos.size();
+
+			if (numModules > 1) {
+				out.println("######## STARTING Import of " + numModules + " modules ########");
+			}
+			for (ModuleImportInfo importInfo : importInfos) {
+				importModule(importInfo);
+			}
+			if (numModules > 1) {
+				out.println("######## Import of " + numModules + " modules FINISHED ########");
 			}
 		}
 	}
@@ -170,15 +179,18 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 
 
 
-	private void importModule(String moduleZipPath) {
+	private void importModule(ModuleImportInfo importInfo) {
 
+		String moduleZipPath = importInfo.getModuleZipPath();
 		String moduleZipName = StringUtils.substringAfterLast(moduleZipPath, File.separator);
 		String moduleName = StringUtils.substringBeforeLast(moduleZipName, "_");
 
-		out.println("######## Importing module zip " + moduleZipName + " START ########");
+		out.println("******** Importing module zip " + moduleZipName + " to siteRoot " + importInfo.getImportSiteRoot() + " START ********");
 		out.flush();
 
 		CmsObject cmsObject = getCmsObject();
+		String siteRootBefore = cmsObject.getRequestContext().getSiteRoot();
+		cmsObject.getRequestContext().setSiteRoot(importInfo.getImportSiteRoot());
 		PrintStream ps = new PrintStream(new WriterOutputStream(out));
 
 		try {
@@ -201,13 +213,13 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 					report,
 					params);
 			ps.flush();
-			out.println("######## Importing module zip " + moduleZipName + " FINISHED ########");
+			out.println("******** Importing module zip " + moduleZipName + " to siteRoot " + importInfo.getImportSiteRoot() + " FINISHED ********");
 			out.flush();
 		}
 		catch (CmsException e) {
 			LOG.error("Error importing module " + moduleZipPath, e);
 		}
-
+		cmsObject.getRequestContext().setSiteRoot(siteRootBefore);
 	}
 
 	private boolean checkLogin() {
@@ -237,14 +249,14 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		return request.getParameter(IDEConnectorConst.PARAM_JSON);
 	}
 
-	private List<String> getJsonAsStringList() {
+	private <T> List<T> getJsonAsList(Class<T> typeClass) {
 		String json = getJson();
-		JavaType objList = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, String.class);
+		JavaType objList = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, typeClass);
 		try {
 			return objectMapper.readValue(json, objList);
 		}
 		catch (IOException e) {
-			LOG.error("Exception converting the JSON request parameter to a List of Strings. Param:\n" + json, e);
+			LOG.error("Exception converting the JSON request parameter to a List of " + typeClass.getName() + ". Param:\n" + json, e);
 			return new ArrayList<>();
 		}
 	}

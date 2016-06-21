@@ -4,6 +4,7 @@ import com.mediaworx.opencms.ideconnector.client.params.GenericParams;
 import com.mediaworx.opencms.ideconnector.client.params.TokenParams;
 import com.mediaworx.opencms.ideconnector.consumer.IDEConnectorResponsePrinter;
 import com.mediaworx.opencms.ideconnector.data.LoginStatus;
+import com.mediaworx.opencms.ideconnector.data.ModuleImportInfo;
 import com.mediaworx.opencms.ideconnector.def.IDEConnectorConst;
 
 import java.util.ArrayList;
@@ -55,13 +56,14 @@ public class IDEConnectorClient {
 
 	/**
 	 * Imports the modules at the given local paths and streams the OpenCms import log to the IDEConnectorResponsePrinter
-	 * @param modulePaths   paths to the module zips (local FS)
+	 * @param importInfos   infos needed for importing the module (for each module: path to the module zips in the
+	 *                      local FS and import site root)
 	 * @param printer       printer used to stream the Connector's response
 	 */
-	public void importModules(List<String> modulePaths, IDEConnectorResponsePrinter printer) {
+	public void importModules(List<ModuleImportInfo> importInfos, IDEConnectorResponsePrinter printer) {
 		TokenParams params = new TokenParams();
 		params.setToken(token);
-		params.setJsonBean(modulePaths);
+		params.setJsonBean(importInfos);
 		connector.streamServiceResponse(
 				IDEConnectorConst.SERVICE_IMPORT_MODULE,
 				IDEConnectorConst.METHOD_POST,
@@ -75,10 +77,13 @@ public class IDEConnectorClient {
 	 * @param modulePath   path to the module zips (local FS)
 	 * @param printer      printer used to stream the Connector's response
 	 */
-	public void importModule(String modulePath, IDEConnectorResponsePrinter printer) {
-		List<String> modulePaths = new ArrayList<>(1);
-		modulePaths.add(modulePath);
-		importModules(modulePaths, printer);
+	public void importModule(String modulePath, String importSiteRoot, IDEConnectorResponsePrinter printer) {
+		List<ModuleImportInfo> importInfos = new ArrayList<>(1);
+		ModuleImportInfo importInfo = new ModuleImportInfo();
+		importInfo.setModuleZipPath(modulePath);
+		importInfo.setImportSiteRoot(importSiteRoot);
+		importInfos.add(importInfo);
+		importModules(importInfos, printer);
 	}
 
 	public IDEConnectorClientConfiguration getConfiguration() {
