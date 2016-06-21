@@ -2,8 +2,8 @@
 <export>
     <info>
         <creator>Admin</creator>
-        <opencms_version>9.5.2</opencms_version>
-        <createdate>Tue, 03 Nov 2015 15:51:13 GMT</createdate>
+        <opencms_version>9.5.3.2</opencms_version>
+        <createdate>Tue, 21 Jun 2016 15:06:54 GMT</createdate>
         <infoproject>Offline</infoproject>
         <export_version>7</export_version>
     </info>
@@ -33,7 +33,7 @@
         <file>
             <destination>system</destination>
             <type>folder</type>
-            <uuidstructure>94b3664d-6ee5-45dd-8b02-474ad1a70a10</uuidstructure>
+            <uuidstructure>b7941551-4c6d-4215-b6ad-477281bce466</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -55,7 +55,7 @@
         <file>
             <destination>system/modules</destination>
             <type>folder</type>
-            <uuidstructure>aeee84c0-a52c-4098-874d-c57aa0ca5a11</uuidstructure>
+            <uuidstructure>0485c482-850a-4b94-a116-3824715d459d</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -77,7 +77,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector</destination>
             <type>folder</type>
-            <uuidstructure>59660346-39ea-462d-9e97-9f89eab58ae6</uuidstructure>
+            <uuidstructure>3d488cfb-9620-4ec3-b4de-3c8bd9b21bb1</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -90,7 +90,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes</destination>
             <type>folder</type>
-            <uuidstructure>43891e2f-2d67-449e-8e3e-76e6b5905ace</uuidstructure>
+            <uuidstructure>f4054d54-1439-4c9d-aafa-3e2188237ab0</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -103,7 +103,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com</destination>
             <type>folder</type>
-            <uuidstructure>0d4cc750-94bc-45a5-8301-c1404f0d92af</uuidstructure>
+            <uuidstructure>52d9a1a2-a34b-4b92-b7bd-86f4677aca83</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -116,7 +116,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx</destination>
             <type>folder</type>
-            <uuidstructure>1b25ebfe-2932-4284-a154-7540d61023db</uuidstructure>
+            <uuidstructure>1fa06004-d8b9-491c-980b-30ac7540d708</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -129,7 +129,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms</destination>
             <type>folder</type>
-            <uuidstructure>aa1646b0-6945-4faa-bb57-ecaa179afd12</uuidstructure>
+            <uuidstructure>6e746df2-fdf0-4af1-a588-7542f53487de</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -142,7 +142,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector</destination>
             <type>folder</type>
-            <uuidstructure>9612892d-40a2-457f-9862-9c55ba2279c1</uuidstructure>
+            <uuidstructure>5d53136b-f73c-42d9-b8ce-651694073795</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -155,7 +155,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/dataimpl</destination>
             <type>folder</type>
-            <uuidstructure>d0b3fc5d-49fa-477e-b4cc-4d52db4195cc</uuidstructure>
+            <uuidstructure>c3076be3-c7e9-4d0d-9881-c4e8a0fe8222</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -169,11 +169,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/dataimpl/LoginStatusImpl.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/dataimpl/LoginStatusImpl.class</destination>
             <type>binary</type>
-            <uuidstructure>72bd524d-203c-40e4-983d-b31fe66bb69f</uuidstructure>
-            <uuidresource>ca4bd5ba-b609-482b-9e47-808e7830fd7d</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:08:32 GMT</datelastmodified>
+            <uuidstructure>ebc88d53-e69b-4c47-97ab-8f59149f5727</uuidstructure>
+            <uuidresource>12c6991c-6bcc-4c34-a548-3afbb46643b6</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:08:32 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -184,11 +184,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</destination>
             <type>binary</type>
-            <uuidstructure>b6779a33-4ff7-4c0b-b488-62b9076dd469</uuidstructure>
-            <uuidresource>9a828398-cc9c-4ecb-8a4f-54a6376bcaa3</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:12:22 GMT</datelastmodified>
+            <uuidstructure>1419f94c-2ba3-4a92-8183-883069377222</uuidstructure>
+            <uuidresource>2685aeab-3741-4f5d-ae7d-341ce3e5df8a</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:12:22 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -199,11 +199,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</destination>
             <type>binary</type>
-            <uuidstructure>174f2905-d79e-4141-b136-f1e9d21f6114</uuidstructure>
-            <uuidresource>23e40e76-9e15-4599-8084-dc436de1af8c</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:08:32 GMT</datelastmodified>
+            <uuidstructure>b4c82578-1de1-4d78-9495-ca54d097a943</uuidstructure>
+            <uuidresource>d01426cd-e878-4274-8148-c5f4265484b2</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:08:32 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -213,7 +213,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service</destination>
             <type>folder</type>
-            <uuidstructure>13bc21b2-6e5f-46eb-a13f-593f3bd89d69</uuidstructure>
+            <uuidstructure>1e107d0a-35c2-4abd-9e79-88bd57db97c5</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -227,11 +227,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service/IDEConnectorService.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service/IDEConnectorService.class</destination>
             <type>binary</type>
-            <uuidstructure>1633a34f-c7da-4571-ae1d-a1cde3c4a80a</uuidstructure>
-            <uuidresource>11185d95-78d9-4278-b6ab-f3ea2a220ce7</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:08:32 GMT</datelastmodified>
+            <uuidstructure>20ffb48e-8eb0-4481-b0e6-de8b217ee42f</uuidstructure>
+            <uuidresource>5b78d137-d897-4220-8bfa-9e81f163f04c</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:08:32 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -242,8 +242,8 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</destination>
             <type>jsp</type>
-            <uuidstructure>1f6ccde0-3694-4ac2-b8b1-8ec0f91887ce</uuidstructure>
-            <uuidresource>e2b8bc5f-2330-4137-94bb-8e02a6ad37c1</uuidresource>
+            <uuidstructure>73401dd3-1358-454f-93c4-013a5b24ebbf</uuidstructure>
+            <uuidresource>d5ef1e16-915b-4e58-8f26-15c6c87716cd</uuidresource>
             <datelastmodified>Fri, 17 Jul 2015 13:43:44 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Fri, 17 Jul 2015 13:43:44 GMT</datecreated>
@@ -265,7 +265,7 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib</destination>
             <type>folder</type>
-            <uuidstructure>773ffc0b-245a-4873-b40e-f5f0bf718721</uuidstructure>
+            <uuidstructure>671575c5-7152-41f2-8bdd-e00d17015832</uuidstructure>
             <datelastmodified>Tue, 03 Nov 2015 15:15:48 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Tue, 03 Nov 2015 15:15:48 GMT</datecreated>
@@ -279,11 +279,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/asm.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/asm.jar</destination>
             <type>binary</type>
-            <uuidstructure>e46829bc-73c3-4c2a-9d10-b24c58f4c9ac</uuidstructure>
-            <uuidresource>c02e2bcb-d8b6-4747-8a14-160734a19462</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>443e4acb-422a-4701-b540-7bc90f3b1ffd</uuidstructure>
+            <uuidresource>c36644fd-151e-42a8-8094-bf79b4d8ba59</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -294,11 +294,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/ideconnector-common.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/ideconnector-common.jar</destination>
             <type>binary</type>
-            <uuidstructure>60985070-f92a-47f2-84af-7cdabd441184</uuidstructure>
-            <uuidresource>58df9da4-71d8-4456-9aa0-fc5e675a5479</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>bbda652b-8192-4abf-889f-503f81e6279a</uuidstructure>
+            <uuidresource>eb2429aa-c70f-424a-b140-ea68ab2082a4</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -309,11 +309,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-annotations.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-annotations.jar</destination>
             <type>binary</type>
-            <uuidstructure>eb33d5cb-5b20-44f1-9b70-1ed4c9dc6015</uuidstructure>
-            <uuidresource>c2077c19-ce63-4221-8270-10573bc77701</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>7e0ed7ea-96f9-43b3-bfe3-2aab043dc105</uuidstructure>
+            <uuidresource>02ce1d14-950d-421e-9184-8bdeb7b012bd</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -324,11 +324,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-core-asl.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-core-asl.jar</destination>
             <type>binary</type>
-            <uuidstructure>a4d5e596-80f0-47db-90d2-6d2cbfbd9446</uuidstructure>
-            <uuidresource>e1bd8e93-2447-4a98-a2b5-934735514c87</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>288bb542-a913-4d05-a1ad-60bdc5259677</uuidstructure>
+            <uuidresource>2ff5592e-962a-4423-874d-54418ff981a1</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -339,11 +339,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-core.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-core.jar</destination>
             <type>binary</type>
-            <uuidstructure>a7d70b9b-0782-4eb4-8503-f5b66485e78f</uuidstructure>
-            <uuidresource>07de318a-2abc-4924-ba5e-21be95cdfdbe</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>dd32de6e-bef6-4bc4-a86d-9aae9b768fdb</uuidstructure>
+            <uuidresource>6878698d-59d6-487c-b42a-9cb87c97d2bd</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -354,11 +354,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-databind.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-databind.jar</destination>
             <type>binary</type>
-            <uuidstructure>326123c4-d0ac-404a-adfc-e62aba282166</uuidstructure>
-            <uuidresource>fa39a1b4-5e08-44f3-ab46-cdfe9b422c1a</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>366f47d3-9c4e-47ab-8cef-3f1a6f8b29c8</uuidstructure>
+            <uuidresource>75a6ff8d-da8d-4db0-bb13-67f444179e5a</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -369,11 +369,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-base.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-base.jar</destination>
             <type>binary</type>
-            <uuidstructure>eee359c4-4158-48d8-9574-6aafa1a2162c</uuidstructure>
-            <uuidresource>3041114c-89f3-43f7-a608-eaad6c66c44c</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>d6a563a9-a98e-492a-b31b-bd6db2322f92</uuidstructure>
+            <uuidresource>1657e4f9-c566-49ca-a895-802166dca0e2</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -384,11 +384,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-json-provider.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-json-provider.jar</destination>
             <type>binary</type>
-            <uuidstructure>4abf5599-245f-4dee-a71f-12d4921569c9</uuidstructure>
-            <uuidresource>6e1d7f6f-821f-4e3a-9e80-6f019ac1f411</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>8066a93a-87b3-43c3-9b5c-bb7584e02b54</uuidstructure>
+            <uuidresource>89508598-6901-45ce-bc67-2cf12f7558db</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -399,11 +399,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-mapper-asl.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-mapper-asl.jar</destination>
             <type>binary</type>
-            <uuidstructure>4595d2f4-b346-4e3b-a3c8-5e98c006d7ec</uuidstructure>
-            <uuidresource>53a98e6d-1f45-47e2-bff2-af80331a18e6</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>2ef0150a-5aac-485f-bf8f-6bf211a99e0f</uuidstructure>
+            <uuidresource>b1f92f32-8c06-4d26-ad20-7a6cf8e11eb3</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -414,11 +414,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-jaxb-annotations.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-jaxb-annotations.jar</destination>
             <type>binary</type>
-            <uuidstructure>1b16faa0-2b1a-4fa6-87be-d19868b569fd</uuidstructure>
-            <uuidresource>2761dc9f-28ff-47df-9fc2-9e4068310874</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>5b4fbb52-0be3-436e-98cf-4594b12802eb</uuidstructure>
+            <uuidresource>01c9d61f-fcbb-497a-a6fa-f21efc64ff19</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -429,11 +429,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-mrbean.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-mrbean.jar</destination>
             <type>binary</type>
-            <uuidstructure>469bfa34-f8e6-480e-b667-90493409bdf8</uuidstructure>
-            <uuidresource>6ff466f5-5f76-4f48-be57-236bae325b89</uuidresource>
-            <datelastmodified>Tue, 03 Nov 2015 15:51:12 GMT</datelastmodified>
+            <uuidstructure>52734c76-6c77-44cd-a7b2-145f0a90df7e</uuidstructure>
+            <uuidresource>f3063750-3687-4ae6-989f-a700bf40a04f</uuidresource>
+            <datelastmodified>Tue, 21 Jun 2016 15:06:54 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Tue, 03 Nov 2015 15:51:12 GMT</datecreated>
+            <datecreated>Tue, 21 Jun 2016 15:06:54 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -444,8 +444,8 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/test.html</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/test.html</destination>
             <type>plain</type>
-            <uuidstructure>89c3c861-9bc8-4f54-b818-b5dc62770fad</uuidstructure>
-            <uuidresource>5d1290ae-c7e3-498b-8262-920733204910</uuidresource>
+            <uuidstructure>ed567729-8967-487b-b702-e46ad0201c23</uuidstructure>
+            <uuidresource>7cdb3685-f787-4ac9-bb99-a4286f7af526</uuidresource>
             <datelastmodified>Fri, 17 Jul 2015 13:43:44 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
             <datecreated>Fri, 17 Jul 2015 13:43:44 GMT</datecreated>
