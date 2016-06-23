@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-service</artifactId>
-	<version>1.8</version>
+	<version>1.9</version>
 	<packaging>opencms-module</packaging>
 	<name>OpenCms IDE connector - Service</name>
 
@@ -115,7 +115,7 @@
 		<dependency>
 			<groupId>com.mediaworx.opencms</groupId>
 			<artifactId>ideconnector-common</artifactId>
-			<version>1.8</version>
+			<version>1.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
