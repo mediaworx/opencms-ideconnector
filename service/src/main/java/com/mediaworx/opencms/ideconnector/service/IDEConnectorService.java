@@ -45,11 +45,12 @@ import java.util.Map;
  * <ul>
  *     <li>login</li>
  *     <li>logout</li>
- *     <li>importModule</li>
+ *     <li>importModule (can import multiple modules as well)</li>
  * </ul>
  *
  * There's a standalone Java client that can be used to connect to those services and that does all the request/response
- * handling and provides a convenient API. See GitHub for details.
+ * handling and provides a convenient API.
+ * See <a href="https://github.com/mediaworx/opencms-ideconnector/tree/master/client">GitHub</a> for details.
  */
 @WebServlet(
 		name = "ideConnector",
@@ -67,6 +68,14 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 	private ObjectMapper objectMapper;
 
 
+	/**
+	 * Initializes the Servlet, creates the ObjectMapper used to deserialize or serialize JSON
+	 *
+	 * @param config the <code>ServletConfig</code> object that contains configutation information for this servlet,
+	 *               provided by the ServletContainer
+	 *
+	 * @throws ServletException is never thrown
+	 */
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
