@@ -36,7 +36,20 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by kai on 10.07.15.
+ * Servlet providing a service to connect IDEs to OpenCms. This Service is intended to be the successor to the old
+ * {@link com.mediaworx.opencms.ideconnector.OpenCmsIDEConnector}, methods from the latter will be integrated as
+ * services in this class over time.
+ *
+ * Services provided by this servlet are
+ *
+ * <ul>
+ *     <li>login</li>
+ *     <li>logout</li>
+ *     <li>importModule</li>
+ * </ul>
+ *
+ * There's a standalone Java client that can be used to connect to those services and that does all the request/response
+ * handling and provides a convenient API. See GitHub for details.
  */
 @WebServlet(
 		name = "ideConnector",
@@ -69,9 +82,7 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		this.request = request;
 		this.response = response;
 
-		LOG.info("Setting content type to text/plain; charset=" + StandardCharsets.UTF_8.name());
 		response.setContentType("text/plain; charset=" + StandardCharsets.UTF_8.name());
-		LOG.info("Setting character encoding to " + StandardCharsets.UTF_8.name());
 		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
 
 		out = response.getWriter();
@@ -80,9 +91,11 @@ public class IDEConnectorService extends javax.servlet.http.HttpServlet {
 		String requestUri = request.getRequestURI();
 		String service = requestUri.substring(servletPath.length() + 1);
 
-		LOG.info("servletPath: " + servletPath);
-		LOG.info("requestUri: " + requestUri);
-		LOG.info("service: " + service);
+		if (LOG.isInfoEnabled()) {
+			LOG.info("servletPath: " + servletPath);
+			LOG.info("requestUri: " + requestUri);
+			LOG.info("service: " + service);
+		}
 
 		// TODO: use reflection on self to locate methods (for this all methods should be self contained and void)
 		if (IDEConnectorConst.SERVICE_LOGIN.equals(service)) {

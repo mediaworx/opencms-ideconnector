@@ -276,7 +276,7 @@ import java.util.Locale;
  * new IDs are created whenever the manifest is generated. So we advise against using this option. It's there for
  * downward compatibility reasons.</strong>
  *
- * @author Kai Widman, 2013/2014/2015 mediaworx Berlin AG
+ * @author Kai Widman, 2013-2016 mediaworx Berlin AG
  */
 public class OpenCmsIDEConnector {
 
