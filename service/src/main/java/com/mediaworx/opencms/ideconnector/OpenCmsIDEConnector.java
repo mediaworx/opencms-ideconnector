@@ -314,6 +314,7 @@ public class OpenCmsIDEConnector {
 
 		CmsFlexController flexController = CmsFlexController.getController(pageContext.getRequest());
 		cmsObject = flexController.getCmsObject();
+		cmsObject.getRequestContext().setSiteRoot("/");
 		xmlHelper = new MetaXmlHelper(cmsObject);
 		boolean useDateVariables = "true".equals(request.getParameter("useDateVariables"));
 		xmlHelper.setUseDateVariables(useDateVariables);
