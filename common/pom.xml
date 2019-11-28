@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-common</artifactId>
-	<version>1.9.2</version>
+	<version>1.9.3</version>
 	<packaging>jar</packaging>
 
 	<name>OpenCms IDE connector - Common</name>
