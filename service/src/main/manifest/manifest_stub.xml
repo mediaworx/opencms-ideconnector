@@ -12,6 +12,7 @@
         <group>com.mediaworx.opencms</group>
         <class/>
         <export-mode name="default"/>
+        
         <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
         <version>2.1</version>
         <authorname><![CDATA[Kai Widmann]]></authorname>
@@ -28,7 +29,8 @@
             <resource uri="/system/modules/com.mediaworx.opencms.ideconnector105/"/>
         </resources>
         <excluderesources/>
-        <parameters/>
+        
+<parameters/>
     </module>
     <files/>
 </export>
