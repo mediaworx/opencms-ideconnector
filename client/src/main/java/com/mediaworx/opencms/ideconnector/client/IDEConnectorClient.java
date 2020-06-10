@@ -5,6 +5,7 @@ import com.mediaworx.opencms.ideconnector.client.params.TokenParams;
 import com.mediaworx.opencms.ideconnector.consumer.IDEConnectorResponsePrinter;
 import com.mediaworx.opencms.ideconnector.data.LoginStatus;
 import com.mediaworx.opencms.ideconnector.data.ModuleImportInfo;
+import com.mediaworx.opencms.ideconnector.dataimpl.LoginStatusImpl;
 import com.mediaworx.opencms.ideconnector.def.IDEConnectorConst;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class IDEConnectorClient {
 				IDEConnectorConst.SERVICE_LOGIN,
 				IDEConnectorConst.METHOD_GET,
 				params,
-				LoginStatus.class
+				LoginStatusImpl.class
 		);
 
 		// store the token for later use
