@@ -214,7 +214,7 @@ public class MetaXmlHelper extends CmsExport {
 		if (module == null) {
 			throw new IllegalArgumentException(moduleName + " is not a valid OpenCms module");
 		}
-		return CmsModuleXmlHandler.generateXml(module, CmsModuleXmlHandler.XmlWriteMode.manifest);
+		return CmsModuleXmlHandler.generateXml(module);
 	}
 
 	/**
