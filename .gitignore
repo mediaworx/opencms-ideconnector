@@ -2,5 +2,5 @@
 *.iml
 target
 src/main/manifest/manifest.xml
-service/src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector/classes
+service/src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector105/classes
 service/src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector.ideconnector-service/lib

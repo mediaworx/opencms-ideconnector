@@ -36,9 +36,9 @@ import java.util.Locale;
  * The connector is implemented as a very simple JSP page (backed by this class) without custom tags, so it works out
  * of the box without the need to fiddle with any servlet settings in web.xml and without extending any taglibs.<br />
  * The connector-JSP can be found at the following OpenCms URL:
- * http://[opencms-base-url]/system/modules/com.mediaworx.opencms.ideconnector/connector.jsp.
+ * http://[opencms-base-url]/system/modules/com.mediaworx.opencms.ideconnector105/connector.jsp.
  * In a typical local tomcat only setup this would be something like:
- * http://localhost:8080/opencms/opencms/system/modules/com.mediaworx.opencms.ideconnector/connector.jsp
+ * http://localhost:8080/opencms/opencms/system/modules/com.mediaworx.opencms.ideconnector105/connector.jsp
  * <br /><br />
  * The connector must be requested with four parameters: <code>user</code>, <code>password</code>, <code>action</code>
  * and <code>json</code>. The <code>action</code>-parameter tells the connector what to do, while the <code>json</code>
@@ -305,7 +305,7 @@ public class OpenCmsIDEConnector {
 
 	/**
 	 * Creates a new IDE connector for the given pageContext, must be executed from a JSP context. Used by
-	 * the JSP found in the VFS under <code>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</code>.
+	 * the JSP found in the VFS under <code>system/modules/com.mediaworx.opencms.ideconnector105/connector.jsp</code>.
 	 * @param pageContext   the page context of the JSP creation the IDE connector.
 	 */
 	public OpenCmsIDEConnector(PageContext pageContext) throws IOException {

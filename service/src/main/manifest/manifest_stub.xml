@@ -7,12 +7,11 @@
         <export_version>7</export_version>
     </info>
     <module>
-        <name>com.mediaworx.opencms.ideconnector</name>
-        <nicename><![CDATA[Connector for IDEs]]></nicename>
+        <name>com.mediaworx.opencms.ideconnector105</name>
+        <nicename><![CDATA[Connector for IDEs, OpenCms 10.5 version]]></nicename>
         <group>com.mediaworx.opencms</group>
         <class/>
         <export-mode name="default"/>
-        
         <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
         <version>2.1</version>
         <authorname><![CDATA[Kai Widmann]]></authorname>
@@ -22,15 +21,14 @@
         <dateinstalled/>
         <dependencies/>
         <exportpoints>
-            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector/classes/" destination="WEB-INF/classes/"/>
-            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector/lib/" destination="WEB-INF/lib/"/>
+            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector105/classes/" destination="WEB-INF/classes/"/>
+            <exportpoint uri="/system/modules/com.mediaworx.opencms.ideconnector105/lib/" destination="WEB-INF/lib/"/>
         </exportpoints>
         <resources>
-            <resource uri="/system/modules/com.mediaworx.opencms.ideconnector/"/>
+            <resource uri="/system/modules/com.mediaworx.opencms.ideconnector105/"/>
         </resources>
         <excluderesources/>
-        
-<parameters/>
+        <parameters/>
     </module>
     <files/>
 </export>

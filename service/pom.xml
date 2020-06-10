@@ -34,7 +34,7 @@
 	</properties>
 
 	<build>
-		<outputDirectory>src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector/classes</outputDirectory>
+		<outputDirectory>src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector105/classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>com.mediaworx.mojo</groupId>
@@ -42,7 +42,7 @@
 				<version>1.5</version>
 				<extensions>true</extensions>
 				<configuration>
-					<moduleName>com.mediaworx.opencms.ideconnector</moduleName>
+					<moduleName>com.mediaworx.opencms.ideconnector105</moduleName>
 					<addDependencies>true</addDependencies>
 					<manifestMetaDir>${project.basedir}/src/main/manifest</manifestMetaDir>
 					<replaceMetaVariables>true</replaceMetaVariables>
@@ -68,14 +68,14 @@
 					<configuration>
 						<filesets>
 							<fileset>
-								<directory>src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector/lib</directory>
+								<directory>src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector105/lib</directory>
 								<includes>
 									<include>*.jar</include>
 								</includes>
 							</fileset>
 							<fileset>
 								<directory>
-									src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector/classes
+									src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector105/classes
 								</directory>
 								<includes>
 									<include>*.class</include>
