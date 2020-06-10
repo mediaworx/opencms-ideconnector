@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-service</artifactId>
-	<version>2.0</version>
+	<version>2.1</version>
 	<packaging>opencms-module</packaging>
 	<name>OpenCms IDE connector - Service</name>
 
@@ -103,7 +103,7 @@
 		<dependency>
 			<groupId>com.mediaworx.opencms</groupId>
 			<artifactId>ideconnector-common</artifactId>
-			<version>1.9.3</version>
+			<version>2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
