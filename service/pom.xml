@@ -30,7 +30,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<opencmsversion>8.5.1</opencmsversion>
 	</properties>
 
 	<build>
