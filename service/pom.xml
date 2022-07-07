@@ -103,7 +103,7 @@
 		<dependency>
 			<groupId>org.opencms</groupId>
 			<artifactId>opencms-core</artifactId>
-			<version>12.0</version>
+			<version>13.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
