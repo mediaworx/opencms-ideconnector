@@ -11,7 +11,7 @@ import org.opencms.file.*;
 import org.opencms.i18n.CmsEncoder;
 import org.opencms.importexport.CmsExport;
 import org.opencms.importexport.CmsImportExportManager;
-import org.opencms.importexport.CmsImportVersion7;
+import org.opencms.importexport.CmsImportVersion10;
 import org.opencms.main.CmsException;
 import org.opencms.main.OpenCms;
 import org.opencms.module.CmsModule;
@@ -120,7 +120,7 @@ public class MetaXmlHelper extends CmsExport {
 		Element exportElement = DocumentHelper.createElement(CmsImportExportManager.N_EXPORT);
 		exportElement.add(getExportInfoElement());
 		exportElement.add(getModuleElement(moduleName));
-		exportElement.addElement(CmsImportVersion7.N_FILES);
+		exportElement.addElement(CmsImportVersion10.N_FILES);
 		return getFormattedStringForDocument(DocumentHelper.createDocument(exportElement));
 	}
 
@@ -236,20 +236,20 @@ public class MetaXmlHelper extends CmsExport {
 			}
 
 			// define the file node
-			Element fileElement = DocumentHelper.createElement(CmsImportVersion7.N_FILE);
+			Element fileElement = DocumentHelper.createElement(CmsImportVersion10.N_FILE);
 
 			// only write <source> if resource is a file
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_SOURCE).addText("${" + CmsImportVersion7.N_SOURCE + "}");
+				fileElement.addElement(CmsImportVersion10.N_SOURCE).addText("${" + CmsImportVersion10.N_SOURCE + "}");
 			}
-			fileElement.addElement(CmsImportVersion7.N_DESTINATION).addText("${" + CmsImportVersion7.N_DESTINATION + "}");
-			fileElement.addElement(CmsImportVersion7.N_TYPE).addText(OpenCms.getResourceManager().getResourceType(resource.getTypeId()).getTypeName());
+			fileElement.addElement(CmsImportVersion10.N_DESTINATION).addText("${" + CmsImportVersion10.N_DESTINATION + "}");
+			fileElement.addElement(CmsImportVersion10.N_TYPE).addText(OpenCms.getResourceManager().getResourceType(resource.getTypeId()).getTypeName());
 
-			fileElement.addElement(CmsImportVersion7.N_UUIDSTRUCTURE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
+			fileElement.addElement(CmsImportVersion10.N_UUIDSTRUCTURE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion10.N_UUIDSTRUCTURE + "}" : resource.getStructureId().toString());
 			if (resource.isFile()) {
-				fileElement.addElement(CmsImportVersion7.N_UUIDRESOURCE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion7.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
+				fileElement.addElement(CmsImportVersion10.N_UUIDRESOURCE).addText(useIdVariablesEnabled ? "${" + CmsImportVersion10.N_UUIDRESOURCE + "}" : resource.getResourceId().toString());
 			}
-			fileElement.addElement(CmsImportVersion7.N_DATELASTMODIFIED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
+			fileElement.addElement(CmsImportVersion10.N_DATELASTMODIFIED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion10.N_DATELASTMODIFIED + "}" : CmsDateUtil.getHeaderDate(resource.getDateLastModified()));
 			String userNameLastModified;
 			try {
 				userNameLastModified = cmsObject.readUser(resource.getUserLastModified()).getName();
@@ -257,8 +257,8 @@ public class MetaXmlHelper extends CmsExport {
 			catch (CmsException e) {
 				userNameLastModified = OpenCms.getDefaultUsers().getUserAdmin();
 			}
-			fileElement.addElement(CmsImportVersion7.N_USERLASTMODIFIED).addText(userNameLastModified);
-			fileElement.addElement(CmsImportVersion7.N_DATECREATED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion7.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
+			fileElement.addElement(CmsImportVersion10.N_USERLASTMODIFIED).addText(userNameLastModified);
+			fileElement.addElement(CmsImportVersion10.N_DATECREATED).addText(useDateVariablesEnabled ? "${" + CmsImportVersion10.N_DATECREATED + "}" : CmsDateUtil.getHeaderDate(resource.getDateCreated()));
 			String userNameCreated;
 			try {
 				userNameCreated = cmsObject.readUser(resource.getUserCreated()).getName();
@@ -266,19 +266,19 @@ public class MetaXmlHelper extends CmsExport {
 			catch (CmsException e) {
 				userNameCreated = OpenCms.getDefaultUsers().getUserAdmin();
 			}
-			fileElement.addElement(CmsImportVersion7.N_USERCREATED).addText(userNameCreated);
+			fileElement.addElement(CmsImportVersion10.N_USERCREATED).addText(userNameCreated);
 			if (resource.getDateReleased() != CmsResource.DATE_RELEASED_DEFAULT) {
-				fileElement.addElement(CmsImportVersion7.N_DATERELEASED).addText(CmsDateUtil.getHeaderDate(resource.getDateReleased()));
+				fileElement.addElement(CmsImportVersion10.N_DATERELEASED).addText(CmsDateUtil.getHeaderDate(resource.getDateReleased()));
 			}
 			if (resource.getDateExpired() != CmsResource.DATE_EXPIRED_DEFAULT) {
-				fileElement.addElement(CmsImportVersion7.N_DATEEXPIRED).addText(CmsDateUtil.getHeaderDate(resource.getDateExpired()));
+				fileElement.addElement(CmsImportVersion10.N_DATEEXPIRED).addText(CmsDateUtil.getHeaderDate(resource.getDateExpired()));
 			}
 			int resFlags = resource.getFlags();
 			resFlags &= ~CmsResource.FLAG_LABELED;
-			fileElement.addElement(CmsImportVersion7.N_FLAGS).addText(Integer.toString(resFlags));
+			fileElement.addElement(CmsImportVersion10.N_FLAGS).addText(Integer.toString(resFlags));
 
 			// properties
-			Element propertiesElement = fileElement.addElement(CmsImportVersion7.N_PROPERTIES);
+			Element propertiesElement = fileElement.addElement(CmsImportVersion10.N_PROPERTIES);
 			List<CmsProperty> properties = cmsObject.readPropertyObjects(cmsObject.getSitePath(resource), false);
 			Collections.sort(properties);
 			for (CmsProperty property : properties) {
@@ -291,7 +291,7 @@ public class MetaXmlHelper extends CmsExport {
 
 			// relations
 			List<CmsRelation> relations = cmsObject.getRelationsForResource(resource, CmsRelationFilter.TARGETS.filterNotDefinedInContent());
-			Element relationsElement = fileElement.addElement(CmsImportVersion7.N_RELATIONS);
+			Element relationsElement = fileElement.addElement(CmsImportVersion10.N_RELATIONS);
 
 			for (CmsRelation relation : relations) {
 				CmsResource target;
@@ -309,14 +309,14 @@ public class MetaXmlHelper extends CmsExport {
 			}
 
 			// access control
-			Element acl = fileElement.addElement(CmsImportVersion7.N_ACCESSCONTROL_ENTRIES);
+			Element acl = fileElement.addElement(CmsImportVersion10.N_ACCESSCONTROL_ENTRIES);
 
 			// read the access control entries
 			List<CmsAccessControlEntry> fileAcEntries = cmsObject.getAccessControlEntries(rootPath, false);
 
 			// create xml elements for each access control entry
 			for (CmsAccessControlEntry ace : fileAcEntries) {
-				Element accessentry = acl.addElement(CmsImportVersion7.N_ACCESSCONTROL_ENTRY);
+				Element accessentry = acl.addElement(CmsImportVersion10.N_ACCESSCONTROL_ENTRY);
 
 				// now check if the principal is a group or a user
 				int flags = ace.getFlags();
@@ -341,12 +341,12 @@ public class MetaXmlHelper extends CmsExport {
 					acePrincipalName = CmsRole.PRINCIPAL_ROLE + "." + CmsRole.valueOfId(acePrincipal).getRoleName();
 				}
 
-				accessentry.addElement(CmsImportVersion7.N_ACCESSCONTROL_PRINCIPAL).addText(acePrincipalName);
-				accessentry.addElement(CmsImportVersion7.N_FLAGS).addText(Integer.toString(flags));
+				accessentry.addElement(CmsImportVersion10.N_ACCESSCONTROL_PRINCIPAL).addText(acePrincipalName);
+				accessentry.addElement(CmsImportVersion10.N_FLAGS).addText(Integer.toString(flags));
 
-				Element permissionset = accessentry.addElement(CmsImportVersion7.N_ACCESSCONTROL_PERMISSIONSET);
-				permissionset.addElement(CmsImportVersion7.N_ACCESSCONTROL_ALLOWEDPERMISSIONS).addText(Integer.toString(ace.getAllowedPermissions()));
-				permissionset.addElement(CmsImportVersion7.N_ACCESSCONTROL_DENIEDPERMISSIONS).addText(Integer.toString(ace.getDeniedPermissions()));
+				Element permissionset = accessentry.addElement(CmsImportVersion10.N_ACCESSCONTROL_PERMISSIONSET);
+				permissionset.addElement(CmsImportVersion10.N_ACCESSCONTROL_ALLOWEDPERMISSIONS).addText(Integer.toString(ace.getAllowedPermissions()));
+				permissionset.addElement(CmsImportVersion10.N_ACCESSCONTROL_DENIEDPERMISSIONS).addText(Integer.toString(ace.getDeniedPermissions()));
 			}
 
 			return fileElement;
