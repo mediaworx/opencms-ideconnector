@@ -35,7 +35,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mediaworx-repo</id>
-			<url>http://opencms.mediaworx.com/artifactory/opencms-public/</url>
+			<url>https://mediaworx.com/opencms-plugin-repository/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
