@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/client/ideconnector-client.iml" filepath="$PROJECT_DIR$/client/ideconnector-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/ideconnector-common.iml" filepath="$PROJECT_DIR$/common/ideconnector-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/ideconnector-service.iml" filepath="$PROJECT_DIR$/service/ideconnector-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/opencms-ideconnector.iml" filepath="$PROJECT_DIR$/.idea/opencms-ideconnector.iml" />
+    </modules>
+  </component>
+</project>

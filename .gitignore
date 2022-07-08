@@ -1,5 +1,3 @@
-.idea
-*.iml
 target
 src/main/manifest/manifest.xml
 service/src/main/vfs/system/modules/com.mediaworx.opencms.ideconnector/classes

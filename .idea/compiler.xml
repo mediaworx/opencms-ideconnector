@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ideconnector-client" />
+        <module name="ideconnector-common" />
+        <module name="ideconnector-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ideconnector-client" target="1.7" />
+      <module name="ideconnector-common" target="1.7" />
+      <module name="ideconnector-service" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
