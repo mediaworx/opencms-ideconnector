@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-service</artifactId>
-	<version>2.2.1</version>
+	<version>13.0</version>
 	<packaging>opencms-module</packaging>
 	<name>OpenCms IDE connector - Service</name>
 
@@ -95,15 +95,49 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>org.opencms</groupId>
-			<artifactId>opencms-core</artifactId>
-			<version>12.0</version>
-			<scope>provided</scope>
+	        <groupId>org.opencms</groupId>
+	        <artifactId>opencms-core</artifactId>
+	        <version>13.0</version>
+	        <scope>provided</scope>
+	        <exclusions>
+	          <exclusion>
+	            <groupId>javax.jms</groupId>
+	            <artifactId>jms</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>com.sun.jdmk</groupId>
+	            <artifactId>jmxtools</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>com.sun.jmx</groupId>
+	            <artifactId>jmxri</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>org.restlet.jee</groupId>
+	            <artifactId>org.restlet</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>org.restlet.jee</groupId>
+	            <artifactId>org.restlet.ext.servlet</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>jstl-api</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>cryptix.jce</groupId>
+	            <artifactId>crytix-jce-provider</artifactId>
+	          </exclusion>
+	          <exclusion>
+	            <groupId>org.jpedal.jpedal-lgpl</groupId>
+	            <artifactId>jpedal-lgpl</artifactId>
+	          </exclusion>
+	        </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.mediaworx.opencms</groupId>
 			<artifactId>ideconnector-common</artifactId>
-			<version>2.2.1</version>
+			<version>13.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -116,24 +150,6 @@
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.13</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.13.2.1</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>

@@ -6,7 +6,7 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-client</artifactId>
-	<version>2.2.1</version>
+	<version>13.0</version>
 	<packaging>jar</packaging>
 
 	<name>OpenCms IDE connector - Client</name>
@@ -62,7 +62,7 @@
 		<dependency>
 			<groupId>com.mediaworx.opencms</groupId>
 			<artifactId>ideconnector-common</artifactId>
-			<version>2.2</version>
+			<version>13.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -90,21 +90,9 @@
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.13</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.13.2.1</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

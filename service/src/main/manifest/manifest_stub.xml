@@ -1,7 +1,7 @@
 <export>
     <info>
         <creator>Admin</creator>
-        <opencms_version>10.5.4</opencms_version>
+        <opencms_version>13.0</opencms_version>
         <createdate>${createdate}</createdate>
         <infoproject>Offline</infoproject>
         <export_version>7</export_version>
@@ -14,7 +14,7 @@
         <export-mode name="default"/>
         
         <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
-        <version>2.2.1</version>
+        <version>13.0</version>
         <authorname><![CDATA[Kai Widmann]]></authorname>
         <authoremail><![CDATA[widmann@mediaworx.com]]></authoremail>
         <datecreated/>
