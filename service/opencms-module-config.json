@@ -1,7 +1,7 @@
 {
-	"openCmsModuleName": "default",
+	"openCmsModuleName": "com.mediaworx.opencms.ideconnector",
 	"localVfsRoot": "default",
 	"exportImportSiteRoot": "/",
-	"syncMode": "SYNC",
+	"syncMode": "PUSH",
 	"moduleVersion": "13.0"
 }
