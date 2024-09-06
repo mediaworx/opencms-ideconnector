@@ -6,12 +6,12 @@
 
 	<groupId>com.mediaworx.opencms</groupId>
 	<artifactId>ideconnector-common</artifactId>
-	<version>13.0</version>
+	<version>17.0</version>
 	<packaging>jar</packaging>
 
 	<name>OpenCms IDE connector - Common</name>
 	<description>Common interfaces and definitions for the OpenCms IDE connector service and client.</description>
-	<url>http://mediaworx.com</url>
+	<url>https://www.mediaworx.com</url>
 
 	<licenses>
 		<license>
@@ -40,15 +40,28 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+		<pluginRepository>
+			<id>opencms-plugin-repository</id>
+			<name>mediaworx OpenCms Maven Plugin Repository</name>
+			<url>https://mediaworx.com/ocms-plugin-repository/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.13.0</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>

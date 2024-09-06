@@ -2,7 +2,7 @@
     <file>
         <source>${source}</source>
         <destination>${destination}</destination>
-        <type>plain</type>
+        <type>binary</type>
         <uuidstructure>${uuidstructure}</uuidstructure>
         <uuidresource>${uuidresource}</uuidresource>
         <datelastmodified>${datelastmodified}</datelastmodified>

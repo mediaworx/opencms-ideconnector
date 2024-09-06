@@ -2,29 +2,21 @@
 <export>
     <info>
         <creator>Admin</creator>
-        <opencms_version>13.0</opencms_version>
-        <createdate>Mon, 29 Aug 2022 16:42:20 GMT</createdate>
+        <opencms_version>17.0</opencms_version>
+        <createdate>Fri, 06 Sep 2024 14:37:51 GMT</createdate>
         <infoproject>Offline</infoproject>
         <export_version>7</export_version>
     </info>
     <module>
         <name>com.mediaworx.opencms.ideconnector</name>
-        <nicename>
-            <![CDATA[Connector for IDEs]]>
-        </nicename>
+        <nicename><![CDATA[Connector for IDEs]]></nicename>
         <group>com.mediaworx.opencms</group>
         <class/>
         <export-mode name="default"/>
-        <description>
-            <![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]>
-        </description>
-        <version>13.0</version>
-        <authorname>
-            <![CDATA[Kai Widmann]]>
-        </authorname>
-        <authoremail>
-            <![CDATA[widmann@mediaworx.com]]>
-        </authoremail>
+        <description><![CDATA[Provides a connector for IDEs like IntelliJ, enables publishing functionality and provides meta data for VFS resources.]]></description>
+        <version>17.0</version>
+        <authorname><![CDATA[Kai Widmann]]></authorname>
+        <authoremail><![CDATA[widmann@mediaworx.com]]></authoremail>
         <datecreated/>
         <userinstalled/>
         <dateinstalled/>
@@ -43,10 +35,10 @@
         <file>
             <destination>system</destination>
             <type>folder</type>
-            <uuidstructure>e9e3f668-b015-498e-a7be-dba5ca002180</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>9cb3b73b-1a38-46e6-8e45-a03af2ccc47d</uuidstructure>
+            <datelastmodified>Thu, 05 Sep 2024 20:13:17 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 05 Sep 2024 20:13:17 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -65,10 +57,10 @@
         <file>
             <destination>system/modules</destination>
             <type>folder</type>
-            <uuidstructure>1cb6c6ca-a4c7-4c37-9e38-5662ddf606ec</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>473f0bc5-8178-42ef-b238-1c80700da97c</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -87,10 +79,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector</destination>
             <type>folder</type>
-            <uuidstructure>f7a93528-e239-4321-a353-fe5e73210da7</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>09ed24c7-6c14-4579-892d-7b293700888e</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -100,10 +92,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes</destination>
             <type>folder</type>
-            <uuidstructure>db1b5e9f-ebf8-4e65-8d9e-f852ea6b6f85</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>a59495a6-ca93-4000-b7d3-083817afd8ae</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -113,10 +105,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com</destination>
             <type>folder</type>
-            <uuidstructure>5aad6e9b-4d61-4a6e-b221-7ed6a50bd0f5</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>6951dd8e-33f9-4e12-a583-227ce30c47d1</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -126,10 +118,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx</destination>
             <type>folder</type>
-            <uuidstructure>57bd4ae5-246f-4cbb-b757-945becfb2fe8</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>e9339cd6-dd9f-4c31-9f72-108bef67adcc</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -139,10 +131,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms</destination>
             <type>folder</type>
-            <uuidstructure>bc371176-b127-4a2a-b87b-21d10dfb7e65</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>82d3a008-18b3-4ba1-89c8-e28ce148c4e0</uuidstructure>
+            <datelastmodified>Thu, 15 Aug 2024 10:45:07 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 15 Aug 2024 10:45:07 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -152,10 +144,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector</destination>
             <type>folder</type>
-            <uuidstructure>d1f6fbaa-e324-432e-b0ff-93e250687a2e</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>a60bb284-cb58-4413-931f-c13fa2af0e54</uuidstructure>
+            <datelastmodified>Thu, 05 Sep 2024 20:13:17 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 05 Sep 2024 20:13:17 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -166,11 +158,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/MetaXmlHelper.class</destination>
             <type>binary</type>
-            <uuidstructure>368ded93-c5d8-4c79-b31a-2d6845a15aa2</uuidstructure>
-            <uuidresource>febeb73d-7ece-44a3-908f-7d94231299c3</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:33:14 GMT</datelastmodified>
+            <uuidstructure>b07d346a-1736-456a-968c-560bc5922b0d</uuidstructure>
+            <uuidresource>81a36899-28c7-4ead-bec7-f28fbde3568f</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:33:14 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -180,10 +172,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service</destination>
             <type>folder</type>
-            <uuidstructure>bb4f20b3-c0d2-44e5-8363-b76c964c7909</uuidstructure>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>e8e801ea-54e5-4925-ac14-81edd4f92298</uuidstructure>
+            <datelastmodified>Thu, 05 Sep 2024 20:13:17 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Thu, 05 Sep 2024 20:13:17 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -194,11 +186,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service/IDEConnectorService.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/service/IDEConnectorService.class</destination>
             <type>binary</type>
-            <uuidstructure>64559e9a-9154-4462-9136-d9bca4828733</uuidstructure>
-            <uuidresource>52d0f40c-8a2f-4a5b-8f57-1eda531cc932</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:33:14 GMT</datelastmodified>
+            <uuidstructure>9a76db97-626a-43bd-b142-8af3d930cee5</uuidstructure>
+            <uuidresource>87941032-d1fc-4148-9ec8-d6d85512e7d9</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:33:14 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -209,11 +201,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/classes/com/mediaworx/opencms/ideconnector/OpenCmsIDEConnector.class</destination>
             <type>binary</type>
-            <uuidstructure>f957321b-1a34-47d6-aa84-43f7f552125d</uuidstructure>
-            <uuidresource>f2c786df-414f-4583-b426-c513b0456907</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:33:14 GMT</datelastmodified>
+            <uuidstructure>c609c041-34e3-4c86-b33e-d8b099680c4a</uuidstructure>
+            <uuidresource>6b32e756-18d6-4b5a-9ba3-5cc01222d591</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:33:14 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -224,11 +216,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/test.html</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/test.html</destination>
             <type>plain</type>
-            <uuidstructure>8acd91f5-4cc6-4abf-b064-5c0881cc7775</uuidstructure>
-            <uuidresource>5551dced-e49a-4b10-800f-2f02b4b6b831</uuidresource>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:53 GMT</datelastmodified>
+            <uuidstructure>3778c4cb-b351-4497-89f1-9f36ecdea28b</uuidstructure>
+            <uuidresource>32f34b04-c135-4fac-9300-41414097a72e</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:53 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -238,10 +230,10 @@
         <file>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib</destination>
             <type>folder</type>
-            <uuidstructure>3cf82e13-d667-4428-ade9-63ba9e72e493</uuidstructure>
-            <datelastmodified>Mon, 29 Aug 2022 16:38:08 GMT</datelastmodified>
+            <uuidstructure>e3101d57-82bc-40c4-88d3-b598f49bb3cf</uuidstructure>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:35 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:38:08 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:35 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -252,26 +244,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-mrbean.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-mrbean.jar</destination>
             <type>binary</type>
-            <uuidstructure>d75674a0-4737-4c6a-81cc-71a64378754e</uuidstructure>
-            <uuidresource>36cb3811-6598-4973-8232-55894eb211e1</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:42:20 GMT</datelastmodified>
+            <uuidstructure>cbd40879-dfaa-4617-b4cc-742dabd77ea7</uuidstructure>
+            <uuidresource>37f429b5-96db-4289-b5ed-5e580cb413aa</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:42:20 GMT</datecreated>
-            <usercreated>Admin</usercreated>
-            <flags>0</flags>
-            <properties/>
-            <relations/>
-            <accesscontrol/>
-        </file>
-        <file>
-            <source>system/modules/com.mediaworx.opencms.ideconnector/lib/asm.jar</source>
-            <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/asm.jar</destination>
-            <type>binary</type>
-            <uuidstructure>ce1bfd75-c8b0-40f8-a2f7-3c48e10cd3ff</uuidstructure>
-            <uuidresource>4b0a0095-33a1-4575-9b95-d3a14ff80187</uuidresource>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:53 GMT</datelastmodified>
-            <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:53 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -282,11 +259,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-json-provider.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-json-provider.jar</destination>
             <type>binary</type>
-            <uuidstructure>5c83d3e3-1d2c-43c5-8668-112cf431304a</uuidstructure>
-            <uuidresource>21af0221-414a-428c-a792-45b11e669a6b</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:42:20 GMT</datelastmodified>
+            <uuidstructure>60278c18-3c62-4055-bb1f-58ec1afb6ddc</uuidstructure>
+            <uuidresource>3c0f98c5-b9aa-4de9-80f0-95ff3dbf4e87</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:42:20 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -297,11 +274,41 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/ideconnector-common.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/ideconnector-common.jar</destination>
             <type>binary</type>
-            <uuidstructure>d8684a3e-1558-40e7-b7b4-58d186c3a729</uuidstructure>
-            <uuidresource>a0a4c56b-8a9e-49c4-b8bc-77d8a62bb80c</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:42:20 GMT</datelastmodified>
+            <uuidstructure>c9f76bf1-91fd-43ec-952e-3573d324d153</uuidstructure>
+            <uuidresource>9b627988-df4d-480a-8dca-160d1deb4b21</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:42:20 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jakarta.activation-api.jar</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jakarta.activation-api.jar</destination>
+            <type>binary</type>
+            <uuidstructure>49b503a8-0cef-4b7c-9924-8dbf90030bd7</uuidstructure>
+            <uuidresource>6e035629-33a9-437f-8be6-9265f894ecec</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
+            <usercreated>Admin</usercreated>
+            <flags>0</flags>
+            <properties/>
+            <relations/>
+            <accesscontrol/>
+        </file>
+        <file>
+            <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jakarta.xml.bind-api.jar</source>
+            <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jakarta.xml.bind-api.jar</destination>
+            <type>binary</type>
+            <uuidstructure>0a0d878d-a980-4f8a-9543-26c20d2c4320</uuidstructure>
+            <uuidresource>c1f4d290-7345-405d-8bf0-962849868560</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
+            <userlastmodified>Admin</userlastmodified>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -312,11 +319,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-jaxb-annotations.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-module-jaxb-annotations.jar</destination>
             <type>binary</type>
-            <uuidstructure>1b70b1b0-43dc-420d-8c3a-94c1a7b1a5a4</uuidstructure>
-            <uuidresource>cb901a3e-3b9d-4bae-bbf8-90b0a707f8fa</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:42:20 GMT</datelastmodified>
+            <uuidstructure>25194943-c256-4a2c-8aa1-02bca30a0103</uuidstructure>
+            <uuidresource>8ef2c7e3-eca5-42c6-8da8-f74fb6d130c0</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:42:20 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -327,11 +334,11 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-base.jar</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/lib/jackson-jaxrs-base.jar</destination>
             <type>binary</type>
-            <uuidstructure>1aed7946-810e-4c05-8d06-558cc9dbc3b4</uuidstructure>
-            <uuidresource>03dd166b-6e8b-4e0a-9355-6fe8b68d0fa3</uuidresource>
-            <datelastmodified>Mon, 29 Aug 2022 16:42:20 GMT</datelastmodified>
+            <uuidstructure>96d46f48-c1db-43b5-a632-b539251a0ab7</uuidstructure>
+            <uuidresource>79549e43-f126-4d75-a61a-a2c0a6782cac</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 14:37:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 29 Aug 2022 16:42:20 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 14:37:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties/>
@@ -342,25 +349,21 @@
             <source>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</source>
             <destination>system/modules/com.mediaworx.opencms.ideconnector/connector.jsp</destination>
             <type>jsp</type>
-            <uuidstructure>8d6284d9-9025-441b-99a4-7df3a0614ebe</uuidstructure>
-            <uuidresource>48c0ac7e-03c2-4918-ae9a-dd71b28f8cbd</uuidresource>
-            <datelastmodified>Mon, 28 Mar 2022 12:47:52 GMT</datelastmodified>
+            <uuidstructure>fff7975a-82c5-4d52-a4e3-028cdc3f2279</uuidstructure>
+            <uuidresource>171b972e-f735-42ca-9766-4902d9d2ed03</uuidresource>
+            <datelastmodified>Fri, 06 Sep 2024 08:09:51 GMT</datelastmodified>
             <userlastmodified>Admin</userlastmodified>
-            <datecreated>Mon, 28 Mar 2022 12:47:52 GMT</datecreated>
+            <datecreated>Fri, 06 Sep 2024 08:09:51 GMT</datecreated>
             <usercreated>Admin</usercreated>
             <flags>0</flags>
             <properties>
                 <property>
                     <name>content-encoding</name>
-                    <value>
-                        <![CDATA[UTF-8]]>
-                    </value>
+                    <value><![CDATA[UTF-8]]></value>
                 </property>
                 <property type="shared">
                     <name>export</name>
-                    <value>
-                        <![CDATA[false]]>
-                    </value>
+                    <value><![CDATA[false]]></value>
                 </property>
             </properties>
             <relations/>
